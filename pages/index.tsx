@@ -3,6 +3,8 @@ import {Advantages} from "@/screens/Advantages";
 import {Services} from "@/screens/Services";
 import {Banner} from "@/screens/Banner";
 import {Project} from "@/screens/Projects";
+import {TimeAndMaterials} from "@/screens/TimeAndMaterials";
+import {Team} from "@/screens/Team";
 
 export default function Home() {
     return (
@@ -12,6 +14,8 @@ export default function Home() {
             <Services/>
             <Banner/>
             <Project/>
+            <TimeAndMaterials/>
+            <Team/>
         </div>
     )
 }
