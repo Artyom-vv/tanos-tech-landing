@@ -1,14 +1,13 @@
-import {tet} from "@virtuslab/tetrisly-react";
+import {Hero} from "@/screens/Hero";
+import {Advantages} from "@/screens/Advantages";
+import {Services} from "@/screens/Services";
 
 export default function Home() {
     return (
-        <tet.div className="h-full" display="flex" justifyContent="center" alignItems="center">
-            <tet.h1
-                text="$typo-body-large"
-                color="$color-content-secondary"
-            >
-                Hello world!
-            </tet.h1>
-        </tet.div>
+        <div className="wrapper overflow-x-hidden h-full">
+            <Hero/>
+            <Advantages/>
+            <Services/>
+        </div>
     )
 }

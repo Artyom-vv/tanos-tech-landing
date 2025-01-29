@@ -1,0 +1,1 @@
+export const sectionPaddings = 'xl:py-[72px] md:py-[48px] py-[32px]'
