@@ -2,7 +2,7 @@ import {Icon, IconName} from "@virtuslab/tetrisly-icons";
 import React, {ReactNode} from "react";
 import {tet} from "@virtuslab/tetrisly-react";
 
-export const InfoPanelSmall = ({children, icon}: { icon: IconName, children: ReactNode }) => (
+export const AdvantagePanel = ({children, icon}: { icon: IconName, children: ReactNode }) => (
     <tet.div
         className="basis-[calc(50%-8px)]"
         borderRadius="$border-radius-large"

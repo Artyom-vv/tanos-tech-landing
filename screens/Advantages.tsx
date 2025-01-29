@@ -2,7 +2,7 @@ import {sectionPaddings} from "@/components/tailwind-classnames";
 import {Divider, tet} from "@virtuslab/tetrisly-react";
 import cn from 'classnames';
 import React from "react";
-import {InfoPanelSmall} from "@/components/InfoPanelSmall";
+import {AdvantagePanel} from "@/components/AdvantagePanel";
 import {CustomTag} from "@/components/CustomTag";
 
 export function Advantages() {
@@ -43,12 +43,12 @@ export function Advantages() {
                 </div>
                 <Divider custom={{color: '$color-border-default'}}/>
                 <div className="mt-8 flex gap-4 flex-wrap">
-                    <InfoPanelSmall icon="20-paperplane">Запускаем MVP проекта всего за 1-2 месяца</InfoPanelSmall>
-                    <InfoPanelSmall icon="20-bolt">Совместно с вами управляем приоритетами</InfoPanelSmall>
-                    <InfoPanelSmall icon="20-tree">Обеспечиваем интеграцию  с любыми учетными системами</InfoPanelSmall>
-                    <InfoPanelSmall icon="20-megaphone">Привлекаем грантовое финансирование на реализацию</InfoPanelSmall>
-                    <InfoPanelSmall icon="20-database">Внедряем только собственные технические решения</InfoPanelSmall>
-                    <InfoPanelSmall icon="20-file">Формируем бэклог для дальнейшего развития продукта</InfoPanelSmall>
+                    <AdvantagePanel icon="20-paperplane">Запускаем MVP проекта всего за 1-2 месяца</AdvantagePanel>
+                    <AdvantagePanel icon="20-bolt">Совместно с вами управляем приоритетами</AdvantagePanel>
+                    <AdvantagePanel icon="20-tree">Обеспечиваем интеграцию  с любыми учетными системами</AdvantagePanel>
+                    <AdvantagePanel icon="20-megaphone">Привлекаем грантовое финансирование на реализацию</AdvantagePanel>
+                    <AdvantagePanel icon="20-database">Внедряем только собственные технические решения</AdvantagePanel>
+                    <AdvantagePanel icon="20-file">Формируем бэклог для дальнейшего развития продукта</AdvantagePanel>
                 </div>
             </div>
         </section>
