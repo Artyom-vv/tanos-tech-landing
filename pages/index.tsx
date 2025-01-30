@@ -5,6 +5,8 @@ import {Banner} from "@/screens/Banner";
 import {Project} from "@/screens/Projects";
 import {TimeAndMaterials} from "@/screens/TimeAndMaterials";
 import {Team} from "@/screens/Team";
+import {GeneralDirector} from "@/screens/GeneralDirector";
+import {Footer} from "@/screens/Footer";
 
 export default function Home() {
     return (
@@ -16,6 +18,8 @@ export default function Home() {
             <Project/>
             <TimeAndMaterials/>
             <Team/>
+            <GeneralDirector/>
+            <Footer/>
         </div>
     )
 }
