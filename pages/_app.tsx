@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type {AppProps} from "next/app";
 import {useEffect, useState} from "react";
-import {TetrislyProvider} from "@virtuslab/tetrisly-react";
+import {TetrislyProvider, theme} from "@virtuslab/tetrisly-react";
 
 export default function App({Component, pageProps}: AppProps) {
 
@@ -11,7 +11,15 @@ export default function App({Component, pageProps}: AppProps) {
 
     return (
         isClient ? (
-            <TetrislyProvider>
+            <TetrislyProvider theme={{
+                texts: {
+                    "$typo-hero-large": {
+                        ...theme.texts["$typo-hero-large"],
+                        fontSize: '48px',
+                        lineHeight: '64px'
+                    }
+                }
+            }}>
                 <Component {...pageProps} />
             </TetrislyProvider>
         ) : (

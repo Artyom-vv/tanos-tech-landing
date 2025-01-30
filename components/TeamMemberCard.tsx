@@ -1,14 +1,14 @@
-import {tet} from "@virtuslab/tetrisly-react";
 import {HTMLAttributes, ReactNode, useState} from "react";
-import cn from 'classnames'
+import {tet} from "@virtuslab/tetrisly-react";
+import cn from "classnames";
 
-interface ServiceCardProps {
+interface TeamMemberCardProps {
     src: string
     title: string
     children: ReactNode
 }
 
-export function ServiceCard({src, title, children, ...props}: ServiceCardProps & HTMLAttributes<HTMLDivElement>) {
+export function TeamMemberCard({src, title, children, ...props}: TeamMemberCardProps & HTMLAttributes<HTMLDivElement>) {
     const [flipped, setFlipped] = useState(false);
 
     return (
@@ -23,15 +23,17 @@ export function ServiceCard({src, title, children, ...props}: ServiceCardProps &
             <tet.div
                 backgroundColor={flipped ? "$color-background-default" : "transparent"}
                 borderRadius="$border-radius-large"
-                className={cn("border-[1px] border-transparent h-full transition", {
-                    "!border-[#EAEDF0]": flipped
+                className={cn("border-[1px] border-transparent h-full transition flex", {
+                    "!border-[#EAEDF0]": flipped,
+                    "flex-col-reverse": !flipped,
+                    "flex-col": flipped
                 })}
                 padding="$space-component-padding-2xLarge"
             >
                 <tet.h3
                     text="$typo-header-3xLarge"
                     color={flipped ? "$color-content-primary" : "$color-content-primary-inverted"}
-                    className="transition"
+                    className={cn("transition", )}
                 >
                     {title}
                 </tet.h3>

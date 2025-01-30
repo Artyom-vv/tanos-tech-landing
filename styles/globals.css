@@ -10,3 +10,9 @@
     @apply h-full;
   }
 }
+
+.scroll-horizontal {
+  & > div {
+    padding-left: 50vw;
+  }
+}

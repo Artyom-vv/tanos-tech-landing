@@ -68,7 +68,7 @@ export function Hero() {
             </div>
             <img width="1002"
                  height="1002"
-                 src="/images/shape.png"
+                 src="/images/hero-shape.png"
                  alt="tanos tech"
                  className="absolute h-[864px] w-[864px] -bottom-[376px] -left-[320px]"/>
         </tet.section>

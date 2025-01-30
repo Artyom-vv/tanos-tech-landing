@@ -7,6 +7,7 @@ import {TimeAndMaterials} from "@/screens/TimeAndMaterials";
 import {Team} from "@/screens/Team";
 import {GeneralDirector} from "@/screens/GeneralDirector";
 import {Footer} from "@/screens/Footer";
+import React from "react";
 
 export default function Home() {
     return (
