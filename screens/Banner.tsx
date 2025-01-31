@@ -49,8 +49,8 @@ export function Banner() {
                                 appearance='primary' size="large">Подробнее</Button>
                     </div>
                 </div>
-                <img className="absolute top-1/2 -right-[432px] -translate-y-1/2 saturate-150 z-0"
-                     src="/images/banner.png"
+                <img className="h-[1144px] w-[1144px] absolute top-1/2 -right-[432px] -translate-y-1/2 saturate-150 z-0"
+                     src="/images/banner-shape.webp"
                      alt="tanos banner"
                 />
             </tet.div>

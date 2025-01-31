@@ -65,17 +65,16 @@ export function Footer() {
                         </div>
                     </div>
                 </div>
-                <tet.div
-                    background="radial-gradient(100% 162% at 100% 100%, #272E35 0%, rgba(39, 46, 53, 0.991615) 11.79%, rgba(39, 46, 53, 0.967585) 21.38%, rgba(39, 46, 53, 0.9296) 29.12%, rgba(39, 46, 53, 0.879348) 35.34%, rgba(39, 46, 53, 0.818519) 40.37%, rgba(39, 46, 53, 0.7488) 44.56%, rgba(39, 46, 53, 0.671881) 48.24%, rgba(39, 46, 53, 0.589452) 51.76%, rgba(39, 46, 53, 0.5032) 55.44%, rgba(39, 46, 53, 0.414815) 59.63%, rgba(39, 46, 53, 0.325985) 64.66%, rgba(39, 46, 53, 0.2384) 70.88%, rgba(39, 46, 53, 0.153748) 78.62%, rgba(39, 46, 53, 0.0737185) 88.21%, rgba(39, 46, 53, 0) 100%)"
-                    className="absolute w-full h-full top-0 left-0 z-[1]"
-                ></tet.div>
+                <img src="/images/footer-gradient.png"
+                     className="absolute w-full h-full top-0 left-0 z-1"
+                     alt="gradient"/>
                 <tet.div
                     className="absolute w-full h-full top-0 left-0"
                     backgroundColor="$color-background-inverted"
                 >
                     <img
-                        className="h-[920px] w-[920px] absolute -bottom-[180px] -right-[320px] mix-blend-overlay z-0"
-                        src="/images/footer-shape.png"
+                        className="h-[920px] w-[920px] absolute -bottom-[180px] -right-[320px] rotate-[85deg] mix-blend-overlay z-0"
+                        src="/images/footer-shape.webp"
                         alt="shape"/>
                 </tet.div>
             </tet.div>

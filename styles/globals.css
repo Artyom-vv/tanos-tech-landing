@@ -16,3 +16,7 @@
     padding-left: 50vw;
   }
 }
+
+img {
+  pointer-events: none;
+}
