@@ -21,10 +21,10 @@ export function Header() {
                     </a>
                 </div>
                 <div className="max-xl:hidden col-start-7 col-span-3 flex gap-2">
-                    <CustomLink to="services">Услуги</CustomLink>
-                    <CustomLink to="cases">Кейсы</CustomLink>
-                    <CustomLink to="contacts">Контакты</CustomLink>
-                    <CustomLink to="ai">ИИ для бизнеса</CustomLink>
+                    <CustomLink>Услуги</CustomLink>
+                    <CustomLink>Кейсы</CustomLink>
+                    <CustomLink>Контакты</CustomLink>
+                    <CustomLink>ИИ для бизнеса</CustomLink>
                 </div>
                 <div className="xl:col-span-3 max-xl:col-span-2 flex justify-end">
                     <Button type="button" appearance="primary" size="large" variant="ghost">Заказать проект</Button>
