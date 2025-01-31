@@ -66,7 +66,7 @@ export function Footer() {
                     </div>
                 </div>
                 <img src="/images/footer-gradient.png"
-                     className="absolute w-full h-full top-0 left-0 z-1"
+                     className="absolute w-full h-full top-0 left-0 z-[1]"
                      alt="gradient"/>
                 <tet.div
                     className="absolute w-full h-full top-0 left-0"
