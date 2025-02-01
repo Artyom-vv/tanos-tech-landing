@@ -7,20 +7,35 @@ import {TimeAndMaterials} from "@/screens/TimeAndMaterials";
 import {Team} from "@/screens/Team";
 import {GeneralDirector} from "@/screens/GeneralDirector";
 import {Footer} from "@/screens/Footer";
-import React from "react";
+import React, {useContext, useState} from "react";
+import {RequestModal} from "@/components/RequestModal";
+
+export const ModalContext = React.createContext({
+    openModal: () => {},
+    closeModal: () => {},
+})
 
 export default function Home() {
+
+    const [isModal, setModal] = useState(false)
+
     return (
-        <div className="wrapper overflow-x-hidden h-full">
-            <Hero/>
-            <Advantages/>
-            <Services/>
-            <Banner/>
-            <Project/>
-            <TimeAndMaterials/>
-            <Team/>
-            <GeneralDirector/>
-            <Footer/>
-        </div>
+        <ModalContext.Provider value={{
+            openModal: () => setModal(true),
+            closeModal: () => setModal(false),
+        }}>
+            <div className="wrapper overflow-x-hidden h-full">
+                <Hero/>
+                <Advantages/>
+                <Services/>
+                <Banner/>
+                <Project/>
+                <TimeAndMaterials/>
+                <Team/>
+                <GeneralDirector/>
+                <Footer/>
+            </div>
+            <RequestModal isModal={isModal}/>
+        </ModalContext.Provider>
     )
 }

@@ -4,10 +4,13 @@ import {ReactSVG} from "react-svg";
 import cn from "classnames";
 import {sectionPaddings} from "@/components/tailwind-classnames";
 import {HeroPanel} from "@/components/HeroPanel";
+import {useContext} from "react";
+import {ModalContext} from "@/pages";
 
 const linearGradient = "radial-gradient(100% 162% at 0% 100%, #F5F7F9 0%, rgba(245, 247, 249, 0.991615) 11.79%, rgba(245, 247, 249, 0.967585) 21.38%, rgba(245, 247, 249, 0.9296) 29.12%, rgba(245, 247, 249, 0.879348) 35.34%, rgba(245, 247, 249, 0.818519) 40.37%, rgba(245, 247, 249, 0.7488) 44.56%, rgba(245, 247, 249, 0.671881) 48.24%, rgba(245, 247, 249, 0.589452) 51.76%, rgba(245, 247, 249, 0.5032) 55.44%, rgba(245, 247, 249, 0.414815) 59.63%, rgba(245, 247, 249, 0.325985) 64.66%, rgba(245, 247, 249, 0.2384) 70.88%, rgba(245, 247, 249, 0.153748) 78.62%, rgba(245, 247, 249, 0.0737185) 88.21%, rgba(245, 247, 249, 0) 100%)"
 
 export function Hero() {
+    const {openModal} = useContext(ModalContext)
 
     return (
         <tet.section
@@ -45,6 +48,7 @@ export function Hero() {
                         <HeroPanel icon="20-bolt">Искусственный интеллект</HeroPanel>
                     </div>
                     <Button variant="ghost"
+                            onClick={openModal}
                             custom={{
                                 ghost: {
                                     appearance: {
