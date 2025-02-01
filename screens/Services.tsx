@@ -1,10 +1,13 @@
 import cn from 'classnames'
 import {sectionPaddings} from "@/components/tailwind-classnames";
 import {Button, tet} from '@virtuslab/tetrisly-react';
-import React from "react";
+import React, {useContext} from "react";
 import {ServiceCard} from "@/components/ServiceCard";
+import {ModalContext} from "@/pages";
 
 export function Services() {
+    const {openModal} = useContext(ModalContext)
+
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
@@ -47,6 +50,7 @@ export function Services() {
                     </ServiceCard>
                     <Button
                         className={cn("row-start-3 col-span-1")}
+                        onClick={openModal}
                         custom={{
                             ghost: {
                                 appearance: {

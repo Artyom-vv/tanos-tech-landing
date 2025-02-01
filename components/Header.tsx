@@ -1,10 +1,12 @@
 import {Button, tet} from "@virtuslab/tetrisly-react";
 import {ReactSVG} from "react-svg";
-import React from "react";
+import React, {useContext} from "react";
 import {CustomLink} from "@/components/CustomLink";
-
+import {ModalContext, SectionContext} from "@/pages";
 
 export function Header() {
+    const {openModal} = useContext(ModalContext)
+    const {onSection} = useContext(SectionContext)
 
     return (
         <tet.div borderBottomWidth="1px" borderBottomColor="$color-border-default"
@@ -21,13 +23,15 @@ export function Header() {
                     </a>
                 </div>
                 <div className="max-xl:hidden col-start-7 col-span-3 flex gap-2">
-                    <CustomLink>Услуги</CustomLink>
-                    <CustomLink>Кейсы</CustomLink>
-                    <CustomLink>Контакты</CustomLink>
-                    <CustomLink>ИИ для бизнеса</CustomLink>
+                    <CustomLink onClick={() => onSection('services')}>Услуги</CustomLink>
+                    <CustomLink onClick={() => onSection('projects')}>Кейсы</CustomLink>
+                    <CustomLink onClick={() => onSection('contacts')}>Контакты</CustomLink>
+                    <CustomLink onClick={() => onSection('ai')}>ИИ для бизнеса</CustomLink>
+
                 </div>
                 <div className="xl:col-span-3 max-xl:col-span-2 flex justify-end">
-                    <Button type="button" appearance="primary" size="large" variant="ghost">Заказать проект</Button>
+                    <Button onClick={openModal} type="button" appearance="primary" size="large" variant="ghost">Заказать
+                        проект</Button>
                 </div>
             </div>
         </tet.div>

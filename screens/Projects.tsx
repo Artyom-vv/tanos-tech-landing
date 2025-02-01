@@ -5,7 +5,7 @@ import {tet} from "@virtuslab/tetrisly-react";
 import HorizontalScroll from "react-scroll-horizontal";
 import {ProfileCaseCard} from "@/components/ProfileCaseCard";
 
-export function Project() {
+export function Projects() {
     return (
         <section className={cn(sectionPaddings)}>
             <div className="container grid grid-cols-2 gap-4">

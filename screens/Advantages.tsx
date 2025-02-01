@@ -36,9 +36,9 @@ export function Advantages() {
                         Опыт реализации проектов в сферах:
                     </tet.p>
                     <div className="flex gap-3">
-                        <CustomTag>EdTech</CustomTag>
-                        <CustomTag>FinTech</CustomTag>
-                        <CustomTag>E-commerce</CustomTag>
+                        <CustomTag label="EdTech"/>
+                        <CustomTag label="FinTech"/>
+                        <CustomTag label="E-commerce"/>
                     </div>
                 </div>
                 <Divider custom={{color: '$color-border-default'}}/>

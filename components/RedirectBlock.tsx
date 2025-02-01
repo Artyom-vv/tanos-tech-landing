@@ -1,4 +1,5 @@
 import {Button, tet} from "@virtuslab/tetrisly-react";
+import {Tooltip} from "@/components/Tooltip";
 
 interface Props { title: string, description: string, children: string, link: string }
 
@@ -26,14 +27,17 @@ export function RedirectBlock({children, title, description, link}: Props) {
                 </tet.p>
             </div>
             <a href={link}>
-                <Button
-                    appearance="primary"
-                    variant="bare"
-                    size="large"
-                    afterIcon="20-arrow-up-right"
-                >
-                    {children}
-                </Button>
+                <Tooltip text="В разработке" >
+                    <Button
+                        state="disabled"
+                        appearance="primary"
+                        variant="bare"
+                        size="large"
+                        afterIcon="20-arrow-up-right"
+                    >
+                        {children}
+                    </Button>
+                </Tooltip>
             </a>
         </tet.div>
     )

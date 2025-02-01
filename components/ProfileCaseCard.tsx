@@ -56,7 +56,7 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
                         </tet.p>
                         <div className="flex gap-3">
                             {tags.map((tag, i) => (
-                                <CustomTag key={i}>{tag}</CustomTag>
+                                <CustomTag label={tag} key={i}/>
                             ))}
                         </div>
                     </div>

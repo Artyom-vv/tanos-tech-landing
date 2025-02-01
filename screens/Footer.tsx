@@ -1,9 +1,12 @@
 import cn from "classnames";
 import {sectionPaddings} from "@/components/tailwind-classnames";
 import {Button, Divider, tet} from "@virtuslab/tetrisly-react";
-import React from "react";
+import React, {useContext} from "react";
+import {ModalContext} from "@/pages";
 
 export function Footer() {
+    const {openModal} = useContext(ModalContext)
+
     return (
         <footer className={cn(sectionPaddings)}>
             <tet.div
@@ -30,6 +33,7 @@ export function Footer() {
                             </tet.a>
                         </div>
                         <Button variant="ghost"
+                                onClick={openModal}
                                 custom={{
                                     ghost: {
                                         appearance: {
@@ -69,11 +73,11 @@ export function Footer() {
                      className="absolute w-full h-full top-0 left-0 z-[1]"
                      alt="gradient"/>
                 <tet.div
-                    className="absolute w-full h-full top-0 left-0"
+                    className="container absolute w-full h-full top-0 -translate-x-1/2 left-1/2"
                     backgroundColor="$color-background-inverted"
                 >
                     <img
-                        className="h-[920px] w-[920px] absolute -bottom-[180px] -right-[320px] rotate-[85deg] mix-blend-overlay z-0"
+                        className="h-[920px] w-[920px] absolute -bottom-[180px] -right-[320px] rotate-[85deg] z-0"
                         src="/images/footer-shape.webp"
                         alt="shape"/>
                 </tet.div>
