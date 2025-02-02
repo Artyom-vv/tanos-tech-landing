@@ -7,9 +7,9 @@ export function Banner() {
         <section className={cn(sectionPaddings)}>
             <tet.div
                 backgroundColor="$color-action-primary-normal"
-                className={cn("rounded-[32px] h-[316px] overflow-hidden flex items-center")}
+                className={cn("rounded-[32px] overflow-hidden flex items-center")}
             >
-                <div className="container relative">
+                <div className="container xl:py-14 lg:py-[72px] relative">
                     <div className="h-full grid grid-cols-2 gap-4 items-center relative z-10">
                         <div className="col-span-1">
                             <tet.h3
@@ -17,7 +17,8 @@ export function Banner() {
                                 color="$color-content-primary-inverted"
                                 className={cn("mb-4")}
                             >
-                                Tanos AI: <br/> преобразуйте свой бизнес <br/> вместе с ИИ
+                                Tanos AI: <br className="lg:hidden"/> преобразуйте свой бизнес <br
+                                className="lg:hidden"/> вместе с ИИ
                             </tet.h3>
                             <tet.p
                                 text="$typo-body-large"

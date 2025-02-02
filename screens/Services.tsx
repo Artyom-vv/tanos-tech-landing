@@ -13,8 +13,8 @@ export function Services() {
             backgroundColor="$color-background-neutral-subtle"
             className="rounded-[32px]"
         >
-            <div className={cn('container grid grid-cols-2 gap-4', sectionPaddings)}>
-                <div className="col-span-1">
+            <div className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 gap-4', sectionPaddings)}>
+                <div className="xl:col-span-1 lg:col-span-2">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"
@@ -29,7 +29,7 @@ export function Services() {
                         Каждый проект - это новая возможность
                     </tet.p>
                 </div>
-                <div className="col-span-1 grid grid-cols-2 grid-rows-3 gap-4">
+                <div className="xl:col-span-1 lg:col-span-6 grid grid-cols-2 grid-rows-3 gap-4">
                     <ServiceCard src="/images/web-services.png" title="Веб-сервисы" className="col-span-1">
                         Создаем масштабируемые решения, которые обеспечивают рост вашего бизнеса и адаптацию к
                         изменениям рынка
@@ -37,7 +37,7 @@ export function Services() {
                     <ServiceCard src="/images/erp-crm.png" title="ERP и CRM-системы" className="col-span-1">
                         Lorem ipsum odor amet, consectetuer adipiscing elit.
                     </ServiceCard>
-                    <div className="row-start-2 col-span-2 flex gap-4 -translate-x-[336px]">
+                    <div className="row-start-2 col-span-2 flex gap-4 xl:-translate-x-[336px]">
                         <ServiceCard src="/images/web-apps.png" title="Сайты и приложения" className="col-start-2">
                             Lorem ipsum odor amet, consectetuer adipiscing elit.
                         </ServiceCard>

@@ -16,7 +16,8 @@ export default function App({Component, pageProps}: AppProps) {
                     "$typo-hero-large": {
                         ...theme.texts["$typo-hero-large"],
                         fontSize: '48px',
-                        lineHeight: '64px'
+                        lineHeight: '64px',
+                        letterSpacing: '-0.02em'
                     }
                 }
             }}>

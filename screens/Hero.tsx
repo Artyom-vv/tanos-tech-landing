@@ -6,19 +6,33 @@ import {sectionPaddings} from "@/components/tailwind-classnames";
 import {HeroPanel} from "@/components/HeroPanel";
 import {useContext} from "react";
 import {ModalContext} from "@/pages";
+import {useBreakpoint} from "@/hooks/useBreakpoint";
 
-const linearGradient = "radial-gradient(100% 162% at 0% 100%, #F5F7F9 0%, rgba(245, 247, 249, 0.991615) 11.79%, rgba(245, 247, 249, 0.967585) 21.38%, rgba(245, 247, 249, 0.9296) 29.12%, rgba(245, 247, 249, 0.879348) 35.34%, rgba(245, 247, 249, 0.818519) 40.37%, rgba(245, 247, 249, 0.7488) 44.56%, rgba(245, 247, 249, 0.671881) 48.24%, rgba(245, 247, 249, 0.589452) 51.76%, rgba(245, 247, 249, 0.5032) 55.44%, rgba(245, 247, 249, 0.414815) 59.63%, rgba(245, 247, 249, 0.325985) 64.66%, rgba(245, 247, 249, 0.2384) 70.88%, rgba(245, 247, 249, 0.153748) 78.62%, rgba(245, 247, 249, 0.0737185) 88.21%, rgba(245, 247, 249, 0) 100%)"
+const linearGradientXl = "radial-gradient(100% 162% at 0% 100%, #F5F7F9 0%, rgba(245, 247, 249, 0.991615) 11.79%, rgba(245, 247, 249, 0.967585) 21.38%, rgba(245, 247, 249, 0.9296) 29.12%, rgba(245, 247, 249, 0.879348) 35.34%, rgba(245, 247, 249, 0.818519) 40.37%, rgba(245, 247, 249, 0.7488) 44.56%, rgba(245, 247, 249, 0.671881) 48.24%, rgba(245, 247, 249, 0.589452) 51.76%, rgba(245, 247, 249, 0.5032) 55.44%, rgba(245, 247, 249, 0.414815) 59.63%, rgba(245, 247, 249, 0.325985) 64.66%, rgba(245, 247, 249, 0.2384) 70.88%, rgba(245, 247, 249, 0.153748) 78.62%, rgba(245, 247, 249, 0.0737185) 88.21%, rgba(245, 247, 249, 0) 100%)"
+const linearGradientLg = "radial-gradient(100% 162% at 100% 100%, #F5F7F9 0%, rgba(245, 247, 249, 0.991615) 11.79%, rgba(245, 247, 249, 0.967585) 21.38%, rgba(245, 247, 249, 0.9296) 29.12%, rgba(245, 247, 249, 0.879348) 35.34%, rgba(245, 247, 249, 0.818519) 40.37%, rgba(245, 247, 249, 0.7488) 44.56%, rgba(245, 247, 249, 0.671881) 48.24%, rgba(245, 247, 249, 0.589452) 51.76%, rgba(245, 247, 249, 0.5032) 55.44%, rgba(245, 247, 249, 0.414815) 59.63%, rgba(245, 247, 249, 0.325985) 64.66%, rgba(245, 247, 249, 0.2384) 70.88%, rgba(245, 247, 249, 0.153748) 78.62%, rgba(245, 247, 249, 0.0737185) 88.21%, rgba(245, 247, 249, 0) 100%)";
 
 export function Hero() {
     const {openModal} = useContext(ModalContext)
+    const breakpoint = useBreakpoint()
+
+    const getLinearBackground = () => {
+        switch (breakpoint) {
+            case "xl":
+                return linearGradientXl;
+            case "lg":
+                return linearGradientLg;
+            default:
+                return linearGradientLg;
+        }
+    }
 
     return (
         <tet.section
-            background={linearGradient}
+            background={getLinearBackground()}
             className="flex flex-col overflow-hidden relative">
             <Header/>
-            <div className={cn('container h-[800px] flex-grow  grid grid-cols-2 gap-4', sectionPaddings)}>
-                <div className="col-span-1">
+            <div className={cn('container xl:h-[800px] lg:h-[708px] flex-grow  grid xl:grid-cols-2 lg:grid-cols-8 lg:auto-rows-min gap-4', sectionPaddings)}>
+                <div className="xl:col-span-1 xl:block lg:hidden">
                     <tet.h1 text="$typo-hero-large" color="$color-content-primary">Tanos tech - полный цикл разработки
                         it-решений
                     </tet.h1>
@@ -26,14 +40,19 @@ export function Hero() {
                         <tet.h1 text="$typo-hero-large" color="$color-content-primary"> от идеи</tet.h1>
                         <div className="arrow flex items-center flex-grow">
                             <tet.span backgroundColor="$color-action-primary-normal"
-                                     className="block line h-[5px] flex-grow -mr-[1px]">
+                                      className="block line h-[5px] flex-grow -mr-[1px]">
                             </tet.span>
                             <ReactSVG className="-mb-[1px]" src="/svg/arrow-right.svg"></ReactSVG>
                         </div>
                     </div>
                 </div>
-                <div className="col-span-1">
-                    <tet.h1 text="$typo-hero-large" color="$color-content-primary" className="mb-8">
+                <div className="xl:hidden lg:col-span-8">
+                    <tet.h1 text="$typo-hero-large" color="$color-content-primary">
+                        Tanos tech - полный цикл разработки it-решений от идеи <ReactSVG className="inline-block" src="/svg/arrow-right.svg"></ReactSVG> до реализации
+                    </tet.h1>
+                </div>
+                <div className="xl:col-span-1 xl:col-start-2 xl:row-start-1 lg:row-start-2 lg:col-span-8">
+                    <tet.h1 text="$typo-hero-large" color="$color-content-primary" className="mb-8 xl:block lg:hidden">
                         <br/>
                         <br/>
                         до реализации
@@ -43,7 +62,7 @@ export function Hero() {
                         на следующих
                         аспектах:
                     </tet.p>
-                    <div className="flex gap-4 mb-[100px]">
+                    <div className="flex gap-4 xl:mb-[100px] lg:mb-[72px]">
                         <HeroPanel icon="20-check-badge">Грантовое финансирование</HeroPanel>
                         <HeroPanel icon="20-bolt">Искусственный интеллект</HeroPanel>
                     </div>
@@ -70,11 +89,11 @@ export function Hero() {
                             appearance='inverted' size="large">Заказать проект</Button>
                 </div>
             </div>
-            <img width="1002"
-                 height="1002"
+            <img width="3680"
+                 height="3680"
                  src="/images/hero-shape.webp"
                  alt="tanos tech"
-                 className="absolute h-[864px] w-[864px] -bottom-[376px] -left-[320px]"/>
+                 className="absolute h-[864px] w-[864px] xl:-bottom-[376px] xl:-left-[320px] lg:-right-[360px] lg:-bottom-[360px] "/>
         </tet.section>
     )
 }

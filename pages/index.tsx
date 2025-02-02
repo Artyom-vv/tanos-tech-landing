@@ -29,7 +29,8 @@ export default function Home() {
     }, [])
 
     function goToAnchor(id: string) {
-        document.getElementById(id)?.scrollIntoView({behavior: "smooth"})
+        const el = document.getElementById(id)
+        el?.scrollIntoView({behavior: "smooth"})
     }
 
     return (

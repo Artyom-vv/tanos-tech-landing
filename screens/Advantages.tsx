@@ -8,8 +8,8 @@ import {CustomTag} from "@/components/CustomTag";
 export function Advantages() {
 
     return (
-        <section className={cn('container grid grid-cols-2 gap-4', sectionPaddings)}>
-            <div className="col-span-1">
+        <section className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 gap-4', sectionPaddings)}>
+            <div className="xl:col-span-1 lg:col-span-2">
                 <tet.h2
                     text="$typo-header-3xLarge"
                     color="$color-content-primary"
@@ -17,7 +17,7 @@ export function Advantages() {
                     Почему мы?
                 </tet.h2>
             </div>
-            <div className="col-span-1">
+            <div className="xl:col-span-1 lg:col-span-6">
                 <div
                     className="mb-8"
                 >

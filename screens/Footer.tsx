@@ -4,70 +4,82 @@ import {Button, Divider, tet} from "@virtuslab/tetrisly-react";
 import React, {useContext} from "react";
 import {ModalContext} from "@/pages";
 
-export function Footer() {
+export function FooterContacts() {
     const {openModal} = useContext(ModalContext)
+    return (
+        <div className="flex gap-4 mb-12">
+            <div className="flex flex-col items-start flex-grow">
+                <tet.a
+                    href="mailto:hello@tanostech.com"
+                    text="$typo-hero-large"
+                    color="$color-content-primary-inverted"
+                    className="mb-6"
+                >
+                    hello@tanostech.com
+                </tet.a>
+                <tet.a
+                    href="tel:79274454053"
+                    text="$typo-hero-large"
+                    color="$color-content-primary-inverted"
+                >
+                    +7 (927) 445-40-53
+                </tet.a>
+            </div>
+            <Button variant="ghost"
+                    onClick={openModal}
+                    custom={{
+                        ghost: {
+                            appearance: {
+                                inverted: {
+                                    boxShadow: '',
+                                    bg: {
+                                        _: '$color-action-primary-normal',
+                                        hover: '$color-action-primary-hover',
+                                        active: '$color-action-primary-active',
+                                    },
+                                    h: '168px',
+                                    w: '168px',
+                                    borderRadius: '$border-radius-full',
+                                    transform: 'rotate(-5deg)'
+                                }
+                            },
+                        }
+                    }}
+                    appearance='inverted' size="large">Оставить заявку</Button>
+        </div>
+    )
+}
+
+export function FooterInfo() {
+    return (
+        <div className="flex gap-4 mt-12">
+            <tet.p
+                text="$typo-body-large"
+                color="$color-content-secondary-inverted"
+                className="flex-grow"
+            >
+                © ООО «Танос Тех» - аккредитованная ИТ-компаний №65381 от 11.11.2024
+            </tet.p>
+            <div className="flex gap-6">
+                <Button variant="bare" appearance="inverted" size="large">Telegram</Button>
+                <Button variant="bare" appearance="inverted" size="large">Whatsapp</Button>
+            </div>
+        </div>
+    )
+}
+
+export function Footer() {
 
     return (
-        <footer className={cn(sectionPaddings)}>
+        <footer className={cn(sectionPaddings, "max-xl:!pb-0")}>
             <tet.div
                 borderRadius="32px"
                 backgroundColor="$color-background-inverted"
-                className={cn(sectionPaddings, "overflow-hidden relative")}>
-                <div className="container relative z-10">
-                    <div className="flex gap-4 mb-12">
-                        <div className="flex flex-col items-start flex-grow">
-                            <tet.a
-                                href="mailto:hello@tanostech.com"
-                                text="$typo-hero-large"
-                                color="$color-content-primary-inverted"
-                                className="mb-6"
-                            >
-                                hello@tanostech.com
-                            </tet.a>
-                            <tet.a
-                                href="tel:79274454053"
-                                text="$typo-hero-large"
-                                color="$color-content-primary-inverted"
-                            >
-                                +7 (927) 445-40-53
-                            </tet.a>
-                        </div>
-                        <Button variant="ghost"
-                                onClick={openModal}
-                                custom={{
-                                    ghost: {
-                                        appearance: {
-                                            inverted: {
-                                                boxShadow: '',
-                                                bg: {
-                                                    _: '$color-action-primary-normal',
-                                                    hover: '$color-action-primary-hover',
-                                                    active: '$color-action-primary-active',
-                                                },
-                                                h: '168px',
-                                                w: '168px',
-                                                borderRadius: '$border-radius-full',
-                                                transform: 'rotate(-5deg)'
-                                            }
-                                        },
-                                    }
-                                }}
-                                appearance='inverted' size="large">Оставить заявку</Button>
-                    </div>
+                className="overflow-hidden relative max-xl:!rounded-b-none xl:py-16">
+                <div className="container relative z-10 max-xl:p-12">
+                    <FooterContacts/>
                     <Divider custom={{color: '$color-border-neutral-strong'}}/>
-                    <div className="flex gap-4 mt-12">
-                        <tet.p
-                            text="$typo-body-large"
-                            color="$color-content-secondary-inverted"
-                            className="flex-grow"
-                        >
-                            © ООО «Танос Тех» - аккредитованная ИТ-компаний №65381 от 11.11.2024
-                        </tet.p>
-                        <div className="flex gap-6">
-                            <Button variant="bare" appearance="inverted" size="large">Telegram</Button>
-                            <Button variant="bare" appearance="inverted" size="large">Whatsapp</Button>
-                        </div>
-                    </div>
+                    <FooterInfo/>
                 </div>
                 <img src="/images/footer-gradient.png"
                      className="absolute w-full h-full top-0 left-0 z-[1]"
