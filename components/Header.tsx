@@ -14,7 +14,7 @@ export function Header() {
         <>
             <MobileMenu onSection={onSection}  onClose={() => setMenuModal(false)} isModal={menuModal}/>
             <tet.div borderBottomWidth="1px" borderBottomColor="$color-border-default"
-                     backgroundColor="$color-background-default" className="xl:h-[64px] lg:h-[72px]">
+                     backgroundColor="$color-background-default" className="xl:h-[64px] md:h-[72px] sm:h-[64px]">
                 <div className="container grid xl:grid-cols-12 max-xl:grid-cols-8 gap-4 h-full items-center">
                     <div className="col-span-2 xl:hidden">
                         <Button onClick={() => setMenuModal(true)} variant="ghost" appearance="secondary" size="large" beforeIcon="20-menu">

@@ -7,8 +7,8 @@ import {TeamMemberCard} from "@/components/TeamMemberCard";
 export function Team() {
     return (
         <section className={cn(sectionPaddings)}>
-            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 gap-4">
-                <div className="xl:col-span-1 lg:col-span-2">
+            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-4">
+                <div className="xl:col-span-1 lg:col-span-2 max-lg:hidden">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"
@@ -17,7 +17,7 @@ export function Team() {
                         Команда
                     </tet.h2>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6">
+                <div className="xl:col-span-1 lg:col-span-6 md:col-span-6">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"

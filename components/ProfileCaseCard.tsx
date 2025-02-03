@@ -20,7 +20,7 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
     return (
         <tet.div
             {...props}
-            className={cn("w-[656px] h-[688px]", props.className)}
+            className={cn("lg:w-[656px] lg:h-[688px] md:w-[632px] md:h-[663px]", props.className)}
             background={flipped ? "" : `url("${src}")`}
             borderRadius="$border-radius-large"
             onMouseEnter={() => setFlipped(true)}

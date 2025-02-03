@@ -14,7 +14,7 @@ export function TeamMemberCard({src, title, children, ...props}: TeamMemberCardP
     return (
         <tet.div
             {...props}
-            className={cn("w-[320px] h-[320px]", props.className)}
+            className={cn("lg:w-[320px] lg:h-[320px] max-lg:w-[308px] max-lg:h-[308px]", props.className)}
             background={flipped ? "" : `url("${src}")`}
             borderRadius="$border-radius-large"
             onMouseEnter={() => setFlipped(true)}

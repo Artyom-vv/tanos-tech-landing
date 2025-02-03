@@ -4,17 +4,30 @@ import {Button, tet} from '@virtuslab/tetrisly-react';
 import React, {useContext} from "react";
 import {ServiceCard} from "@/components/ServiceCard";
 import {ModalContext} from "@/pages";
+import {useBreakpoint} from "@/hooks/useBreakpoint";
 
 export function Services() {
     const {openModal} = useContext(ModalContext)
+    const breakpoint = useBreakpoint()
+
+    const getButtonSize = () => {
+        switch (breakpoint) {
+            case "md":
+                return "308px"
+            case "sm":
+                return "328px"
+            default:
+                return "320px"
+        }
+    }
 
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
             className="rounded-[32px]"
         >
-            <div className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 gap-4', sectionPaddings)}>
-                <div className="xl:col-span-1 lg:col-span-2">
+            <div className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4', sectionPaddings)}>
+                <div className="xl:col-span-1 lg:col-span-2 md:col-span-6">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"
@@ -29,7 +42,7 @@ export function Services() {
                         Каждый проект - это новая возможность
                     </tet.p>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6 grid grid-cols-2 grid-rows-3 gap-4">
+                <div className="xl:col-span-1 lg:col-span-6 md:col-span-6 grid grid-cols-2 grid-rows-3 max-xl:auto-rows-min gap-4 max-lg:mt-8">
                     <ServiceCard src="/images/web-services.png" title="Веб-сервисы" className="col-span-1">
                         Создаем масштабируемые решения, которые обеспечивают рост вашего бизнеса и адаптацию к
                         изменениям рынка
@@ -61,8 +74,8 @@ export function Services() {
                                             hover: '$color-action-primary-hover',
                                             active: '$color-action-primary-active',
                                         },
-                                        h: '320px',
-                                        w: '320px',
+                                        h: getButtonSize(),
+                                        w: getButtonSize(),
                                         borderRadius: '$border-radius-large',
                                         display: "flex",
                                         alignItems: "center",

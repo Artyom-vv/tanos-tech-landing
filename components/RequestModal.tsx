@@ -4,9 +4,11 @@ import {ModalContext} from '@/pages';
 import {Button, Divider, IconButton, tet, TextInput} from '@virtuslab/tetrisly-react';
 import {CustomTagProps, TagSelector} from '@/components/CustomTag';
 import PhoneInput from '@/components/PhoneInput';
+import useHeroLargeTypo from "@/hooks/useHeroLargeTypo";
 
 export function RequestModal({isModal}: { isModal: boolean }) {
     const {closeModal} = useContext(ModalContext);
+    const heroLargeTypo = useHeroLargeTypo();
     const [tags] = useState<CustomTagProps[]>([
         {
             label: 'Рекомендации',
@@ -48,9 +50,11 @@ export function RequestModal({isModal}: { isModal: boolean }) {
             isOpen={isModal}
             className={`mt-4 h-full relative transition-all duration-300 ${showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}
         >
-            <div className="h-full overflow-y-auto py-14">
-                <div className="max-w-[656px] mx-auto w-full">
-                    <tet.h2 text="$typo-hero-large">Оставьте заявку</tet.h2>
+            <div
+                className="container h-full overflow-y-auto py-14 grid xl:grid-cols-12 lg:grid-cols-8 sm:grid-cols-6 gap-x-4">
+                <div
+                    className="xl:col-start-4 xl:col-span-6 lg:col-start-2 lg:col-span-6 md:col-start-1 md:col-span-6 mx-auto w-full">
+                    <tet.h2 text={heroLargeTypo}>Оставьте заявку</tet.h2>
                     <tet.p
                         text="$typo-body-large"
                         color="$color-content-secondary"
@@ -90,12 +94,14 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                         <Divider custom={{color: '$color-border-default'}}/>
                     </div>
 
-                    <Button appearance="primary" size="large">
+                    <Button
+                        className="max-lg:min-w-full"
+                        appearance="primary" size="large">
                         Оставить заявку
                     </Button>
                     <tet.p
                         text="$typo-body-large"
-                        color="$color-content-secondary"
+                        color="$color-content-tertiary"
                         className="mt-4"
                     >
                         Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и с политикой
@@ -108,7 +114,8 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                     variant="ghost"
                     appearance="primary"
                     size="large"
-                    className="absolute right-14 top-14"
+                    backgroundColor="$color-background-neutral-subtle"
+                    className="absolute right-6 top-6 !rounded-full !size-[64px]"
                     onClick={() => {
                         setShowContent(false);
                         setTimeout(closeModal, 250)

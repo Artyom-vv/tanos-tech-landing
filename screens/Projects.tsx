@@ -73,13 +73,13 @@ export function Projects() {
 
     return (
         <section className={cn(sectionPaddings)}>
-            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 gap-4">
-                <div className="xl:col-span-1 lg:col-span-2">
+            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4">
+                <div className="xl:col-span-1 lg:col-span-2 md:col-span-6 max-lg:mb-8">
                     <tet.h2 text="$typo-header-3xLarge" color="$color-content-primary">
                         Наши работы
                     </tet.h2>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6">
+                <div className="xl:col-span-1 lg:col-span-6 md:col-span-6">
                     {hydrated && (
                         <>
                             {breakpoint === "xl" && (
@@ -92,7 +92,7 @@ export function Projects() {
                                     <span></span>
                                 </HorizontalScroll>
                             )}
-                            {breakpoint === "lg" && (
+                            {breakpoint !== "xl" && (
                                 <div className="flex flex-col gap-8">
                                     <Cards />
                                 </div>

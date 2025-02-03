@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
+import tailwindConfig from "@/tailwind.config";
 
 const breakpoints = {
-    xl: "(min-width: 1440px)",
-    lg: "(min-width: 1024px)",
-    md: "(min-width: 728px)",
-    sm: "(min-width: 360px)",
+    xl: `(min-width: ${tailwindConfig.theme.extend.screens.xl})`,
+    lg: `(min-width: ${tailwindConfig.theme.extend.screens.lg})`,
+    md: `(min-width: ${tailwindConfig.theme.extend.screens.md})`,
+    sm: `(min-width: ${tailwindConfig.theme.extend.screens.sm})`,
 };
 
 type Breakpoint = keyof typeof breakpoints | "xs";
