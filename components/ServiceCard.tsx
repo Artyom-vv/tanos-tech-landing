@@ -14,8 +14,9 @@ export function ServiceCard({src, title, children, ...props}: ServiceCardProps &
     return (
         <tet.div
             {...props}
-            className={cn("lg:w-[320px] lg:h-[320px] max-lg:w-[308px] max-lg:h-[308px]", props.className)}
+            className={cn("lg:size-[320px] max-lg:size-[308px] max-md:size-[328px]", props.className)}
             background={flipped ? "" : `url("${src}")`}
+            backgroundSize="cover"
             borderRadius="$border-radius-large"
             onMouseEnter={() => setFlipped(true)}
             onMouseLeave={() => setFlipped(false)}

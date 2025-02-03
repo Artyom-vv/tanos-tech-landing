@@ -27,8 +27,8 @@ const Cards = () => (
             secondDescription="Ускорены ключевые бизнес-процессы"
             tags={["Автоматизация", "Алгоритм", "ERP"]}
             className="mr-[36px]"
-            src="/images/cases/feedback-lab.png"
-            title="Feedback Lab"
+            src="/images/cases/roof-pro.png"
+            title="Roof PRO"
         >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
             контрагентов</ProfileCaseCard>
         <ProfileCaseCard
@@ -38,30 +38,8 @@ const Cards = () => (
             secondDescription="Ускорены ключевые бизнес-процессы"
             tags={["Автоматизация", "Алгоритм", "ERP"]}
             className="mr-[36px]"
-            src="/images/cases/feedback-lab.png"
-            title="Feedback Lab"
-        >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
-            контрагентов</ProfileCaseCard>
-        <ProfileCaseCard
-            firstTitle="3 месяца"
-            firstDescription="На разработку MVP-версии проекта"
-            secondTitle="в 5 раз"
-            secondDescription="Ускорены ключевые бизнес-процессы"
-            tags={["Автоматизация", "Алгоритм", "ERP"]}
-            className="mr-[36px]"
-            src="/images/cases/feedback-lab.png"
-            title="Feedback Lab"
-        >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
-            контрагентов</ProfileCaseCard>
-        <ProfileCaseCard
-            firstTitle="3 месяца"
-            firstDescription="На разработку MVP-версии проекта"
-            secondTitle="в 11 раз"
-            secondDescription="Ускорены ключевые бизнес-процессы"
-            tags={["Автоматизация", "Алгоритм", "ERP"]}
-            className="mr-[36px]"
-            src="/images/cases/feedback-lab.png"
-            title="Feedback Lab"
+            src="/images/cases/safety-pro.png"
+            title="Safety PRO"
         >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
             контрагентов</ProfileCaseCard>
     </>
@@ -73,13 +51,13 @@ export function Projects() {
 
     return (
         <section className={cn(sectionPaddings)}>
-            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4">
-                <div className="xl:col-span-1 lg:col-span-2 md:col-span-6 max-lg:mb-8">
+            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-2 gap-x-4">
+                <div className="xl:col-span-1 lg:col-span-2 md:col-span-6 sm:col-span-2 max-lg:mb-8">
                     <tet.h2 text="$typo-header-3xLarge" color="$color-content-primary">
                         Наши работы
                     </tet.h2>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6 md:col-span-6">
+                <div className="xl:col-span-1 lg:col-span-6 md:col-span-6 sm:col-span-2">
                     {hydrated && (
                         <>
                             {breakpoint === "xl" && (

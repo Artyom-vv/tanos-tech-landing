@@ -5,6 +5,7 @@ import React from "react";
 import {Step} from "@/components/Step";
 import useHydration from "@/hooks/useHedration";
 import {useBreakpoint} from "@/hooks/useBreakpoint";
+import {useTypoBodyLarge} from "@/hooks/useTypoBodyLarge";
 
 
 export function DashedBorderBox() {
@@ -50,7 +51,7 @@ export function TimeAndMaterials() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className={cn(sectionPaddings, "rounded-[32px] overflow-hidden relative")}>
+            className={cn(sectionPaddings, "md:rounded-[32px] sm:rounded-[16px] overflow-hidden relative")}>
             {hydrated && (
                 <DashedBoxesOverlay/>
             )}

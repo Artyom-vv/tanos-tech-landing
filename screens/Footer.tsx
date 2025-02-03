@@ -10,13 +10,13 @@ export function FooterContacts() {
     const heroLargeTypo = useHeroLargeTypo();
 
     return (
-        <div className="flex gap-4">
+        <div className="flex max-md:flex-col gap-x-4 max-md:gap-y-8">
             <div className="flex flex-col items-start justify-center flex-grow">
                 <tet.a
                     href="mailto:hello@tanostech.com"
                     text={heroLargeTypo}
                     color="$color-content-primary-inverted"
-                    className="lg:mb-6 md:mb-4"
+                    className="lg:mb-6 max-lg:mb-4"
                 >
                     hello@tanostech.com
                 </tet.a>
@@ -28,27 +28,29 @@ export function FooterContacts() {
                     +7 (927) 445-40-53
                 </tet.a>
             </div>
-            <Button variant="ghost"
-                    onClick={openModal}
-                    custom={{
-                        ghost: {
-                            appearance: {
-                                inverted: {
-                                    boxShadow: '',
-                                    bg: {
-                                        _: '$color-action-primary-normal',
-                                        hover: '$color-action-primary-hover',
-                                        active: '$color-action-primary-active',
-                                    },
-                                    h: '168px',
-                                    w: '168px',
-                                    borderRadius: '$border-radius-full',
-                                    transform: 'rotate(-5deg)'
-                                }
-                            },
-                        }
-                    }}
-                    appearance='inverted' size="large">Оставить заявку</Button>
+            <Button
+                className="max-md:ml-auto"
+                variant="ghost"
+                onClick={openModal}
+                custom={{
+                    ghost: {
+                        appearance: {
+                            inverted: {
+                                boxShadow: '',
+                                bg: {
+                                    _: '$color-action-primary-normal',
+                                    hover: '$color-action-primary-hover',
+                                    active: '$color-action-primary-active',
+                                },
+                                h: '168px',
+                                w: '168px',
+                                borderRadius: '$border-radius-full',
+                                transform: 'rotate(-5deg)'
+                            }
+                        },
+                    }
+                }}
+                appearance='inverted' size="large">Оставить заявку</Button>
         </div>
     )
 }
@@ -88,10 +90,9 @@ export function Footer() {
     return (
         <footer className={cn(sectionPaddings, "max-xl:!pb-0")}>
             <tet.div
-                borderRadius="32px"
                 backgroundColor="$color-background-inverted"
-                className="overflow-hidden relative max-xl:!rounded-b-none xl:py-16">
-                <div className="container relative z-10 max-xl:p-12">
+                className="overflow-hidden relative max-xl:!rounded-b-none xl:py-16 md:rounded-[32px] sm:rounded-[16px]">
+                <div className="container relative z-10 max-xl:py-12 max-md:py-8">
                     <FooterContent/>
                 </div>
                 <img src="/images/footer-gradient.png"
@@ -104,13 +105,24 @@ export function Footer() {
                     <img
                         className="
                             absolute
-                            xl:size-[920px]
-                            max-xl:size-[664px]
-                            max-md:size-[500px]
+                            xl:min-h-[920px]
+                            xl:max-h-[920px]
+                            xl:min-w-[920px]
+                            xl:max-w-[920px]
+                            max-xl:min-w-[664px]
+                            max-xl:max-w-[664px]
+                            max-xl:min-h-[664px]
+                            max-xl:max-h-[664px]
+                            max-md:min-w-[500px]
+                            max-md:max-w-[500px]
+                            max-md:min-h-[500px]
+                            max-md:max-h-[500px]
                             xl:-bottom-[180px]
                             xl:-right-[320px]
                             max-xl:-top-[200px]
                             max-xl:-right-[200px]
+                            max-md:-top-[20px]
+                            max-md:-right-[156px]
                             rotate-[85deg]
                             z-0
                         "

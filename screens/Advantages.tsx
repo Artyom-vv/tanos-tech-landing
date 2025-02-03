@@ -8,7 +8,7 @@ import {CustomTag} from "@/components/CustomTag";
 export function Advantages() {
 
     return (
-        <section className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-4', sectionPaddings)}>
+        <section className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-2 gap-x-4', sectionPaddings)}>
             <div className="xl:col-span-1 lg:col-span-2 max-lg:hidden">
                 <tet.h2
                     text="$typo-header-3xLarge"
@@ -17,7 +17,7 @@ export function Advantages() {
                     Почему мы?
                 </tet.h2>
             </div>
-            <div className="xl:col-span-1 lg:col-span-6 md:col-span-6">
+            <div className="xl:col-span-1 lg:col-span-6 md:col-span-6 sm:col-span-2">
                 <div
                     className="mb-8"
                 >
@@ -42,7 +42,7 @@ export function Advantages() {
                     </div>
                 </div>
                 <Divider custom={{color: '$color-border-default'}}/>
-                <div className="mt-8 flex gap-4 flex-wrap">
+                <div className="mt-8 flex max-md:flex-col gap-4 flex-wrap">
                     <AdvantagePanel icon="20-paperplane">Запускаем MVP проекта всего за 1-2 месяца</AdvantagePanel>
                     <AdvantagePanel icon="20-bolt">Совместно с вами управляем приоритетами</AdvantagePanel>
                     <AdvantagePanel icon="20-tree">Обеспечиваем интеграцию  с любыми учетными системами</AdvantagePanel>

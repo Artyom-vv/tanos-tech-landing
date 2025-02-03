@@ -18,7 +18,11 @@ export default function App({Component, pageProps}: AppProps) {
                         fontSize: '48px',
                         lineHeight: '64px',
                         letterSpacing: '-0.02em'
-                    }
+                    },
+                    "$typo-header-3xLarge": {
+                        ...theme.texts["$typo-header-3xLarge"],
+                        letterSpacing: '-0.02em'
+                    },
                 }
             }}>
                 <Component {...pageProps} />

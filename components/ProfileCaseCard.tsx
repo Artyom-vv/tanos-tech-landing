@@ -2,6 +2,9 @@ import React, {HTMLAttributes, ReactNode, useState} from "react";
 import {Divider, tet} from "@virtuslab/tetrisly-react";
 import cn from "classnames";
 import {CustomTag} from "@/components/CustomTag";
+import {useBreakpoint} from "@/hooks/useBreakpoint";
+import {useHeaderTypo3xLarge} from "@/hooks/useHeaderTypo3xLarge";
+import {usePadding2xLarge} from "@/hooks/usePadding2xLarge";
 
 interface Props {
     src: string
@@ -16,11 +19,14 @@ interface Props {
 
 export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDescription, secondDescription, secondTitle, ...props}: Props & HTMLAttributes<HTMLDivElement>) {
     const [flipped, setFlipped] = useState(false);
+    const breakpoint = useBreakpoint()
+    const text3xLarge = useHeaderTypo3xLarge()
+    const padding2xLarge = usePadding2xLarge()
 
     return (
         <tet.div
             {...props}
-            className={cn("lg:w-[656px] lg:h-[688px] md:w-[632px] md:h-[663px]", props.className)}
+            className={cn("lg:size-[656px] md:w-[632px] md:h-[663px] sm:w-[328px] sm:h-[404px]", props.className)}
             background={flipped ? "" : `url("${src}")`}
             borderRadius="$border-radius-large"
             onMouseEnter={() => setFlipped(true)}
@@ -32,10 +38,10 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
                 className={cn("border-[1px] border-transparent h-full transition duration-300 flex flex-col", {
                     "!border-[#EAEDF0]": flipped
                 })}
-                padding="$space-component-padding-2xLarge"
+                padding={padding2xLarge}
             >
                 <tet.h3
-                    text="$typo-header-3xLarge"
+                    text={text3xLarge}
                     color={flipped ? "$color-content-primary" : "$color-content-primary-inverted"}
                     className="transition"
                 >
@@ -54,7 +60,7 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
                         >
                             {children}
                         </tet.p>
-                        <div className="flex gap-3">
+                        <div className="flex gap-3 flex-wrap">
                             {tags.map((tag, i) => (
                                 <CustomTag label={tag} key={i}/>
                             ))}
@@ -63,26 +69,28 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
 
                     <div>
 
-                        <tet.p
-                            text="$typo-header-4xLarge"
-                            color='$color-content-primary'
-                        >
-                            {firstTitle}
-                        </tet.p>
-                        <tet.p
-                            text="$typo-body-large"
-                            color="$color-content-secondary"
-                            className="mt-2"
-                        >
-                            {firstDescription}
-                        </tet.p>
+                        <div className="max-md:hidden">
+                            <tet.p
+                                text="$typo-header-4xLarge"
+                                color='$color-content-primary'
+                            >
+                                {firstTitle}
+                            </tet.p>
+                            <tet.p
+                                text="$typo-body-large"
+                                color="$color-content-secondary"
+                                className="mt-2"
+                            >
+                                {firstDescription}
+                            </tet.p>
 
-                        <div className="my-6">
-                            <Divider custom={{color: '$color-border-default'}}/>
+                            <div className="my-6">
+                                <Divider custom={{color: '$color-border-default'}}/>
+                            </div>
                         </div>
 
                         <tet.p
-                            text="$typo-header-4xLarge"
+                            text={breakpoint === "sm" ? "$typo-header-xLarge" : "$typo-header-4xLarge"}
                             color='$color-content-primary'
                         >
                             {secondTitle}

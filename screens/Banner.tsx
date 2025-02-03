@@ -1,19 +1,25 @@
 import cn from "classnames";
 import {sectionPaddings} from "@/components/tailwind-classnames";
 import {Button, tet} from "@virtuslab/tetrisly-react";
+import {useBreakpoint} from "@/hooks/useBreakpoint";
+import {useButtonSize} from "@/hooks/useButtonSize";
 
 export function Banner() {
+    const breakpoint = useBreakpoint()
+    const buttonSize = useButtonSize()
+
     return (
         <section className={cn(sectionPaddings)}>
             <tet.div
                 backgroundColor="$color-action-primary-normal"
-                className={cn("rounded-[32px] overflow-hidden flex items-center")}
+                className={cn("md:rounded-[32px] sm:rounded-[16px] overflow-hidden flex items-center")}
             >
-                <div className="container xl:py-14 lg:py-[72px] md:py-12 relative">
-                    <div className="h-full grid lg:grid-cols-2 md:grid-cols-6 gap-x-4 items-center relative z-10">
-                        <div className="lg:col-span-1 md:col-span-6">
+                <div className="container xl:py-14 lg:py-[72px] md:py-12 sm:py-8 relative">
+                    <div
+                        className="h-full grid lg:grid-cols-2 md:grid-cols-6 sm:grid-cols-2 gap-x-4 items-center relative z-10">
+                        <div className="lg:col-span-1 md:col-span-6 sm:col-span-2">
                             <tet.h3
-                                text="$typo-header-4xLarge"
+                                text={breakpoint === "sm" ? "$typo-header-3xLarge" : "$typo-header-4xLarge"}
                                 color="$color-content-primary-inverted"
                                 className={cn("mb-4")}
                             >
@@ -24,11 +30,13 @@ export function Banner() {
                                 text="$typo-body-large"
                                 color="$color-content-primary-inverted"
                             >
-                                Превращаем возможности искусственного интеллекта <br className="lg:hidden"/> в реальные бизнес-результаты по щелчку
+                                Превращаем возможности искусственного интеллекта <br className="lg:hidden max-md:hidden"/> в реальные
+                                бизнес-результаты по щелчку
                                 пальцев
                             </tet.p>
                         </div>
-                        <div className="lg:col-span-1 max-lg:row-start-2 max-lg:col-span-6 max-lg:mt-[72px] flex justify-end">
+                        <div
+                            className="lg:col-span-1 max-lg:row-start-2 max-lg:col-span-6 sm:col-span-2 max-lg:mt-[72px] max-md:mt-8 flex justify-end">
                             <Button variant="ghost"
                                     custom={{
                                         ghost: {
@@ -40,8 +48,7 @@ export function Banner() {
                                                         hover: '$color-action-inverted-hover',
                                                         active: '$color-action-inverted-active',
                                                     },
-                                                    h: '168px',
-                                                    w: '168px',
+                                                    ...buttonSize,
                                                     borderRadius: '$border-radius-full',
                                                     transform: 'rotate(-5deg)'
                                                 }
@@ -52,7 +59,15 @@ export function Banner() {
                         </div>
                     </div>
                     <img
-                        className="xl:h-[1144px] xl:min-w-[1144px] max-xl:h-[880px] max-xl:min-w-[880px] absolute lg:top-1/2 lg:-right-[432px] lg:-translate-y-1/2 md:-right-[308px] max-lg:-bottom-[308px] saturate-150 z-0"
+                        className="
+                            min-h-[1144px] max-xl:min-h-[880px] max-md:min-h-[532px]
+                            min-w-[1144px] max-xl:min-w-[880px] max-md:min-w-[532px]
+                            absolute lg:top-1/2
+                            lg:-right-[432px] lg:-translate-y-1/2
+                            md:-right-[308px] max-lg:-bottom-[308px]
+                            max-md:-right-[130px] max-md:-bottom-[162px]
+                            saturate-150 z-0
+                        "
                         src="/images/banner-shape.webp"
                         alt="tanos banner"
                     />

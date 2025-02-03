@@ -29,7 +29,7 @@ function MoreInfo() {
                     «Росконгресс», наставник платформы «МСП.РФ».
                 </tet.p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex max-md:flex-col gap-4">
                 <RedirectBlock title="Более 100 проектов" description="реализовано за время работы"
                                link="#">Портфолио</RedirectBlock>
                 <RedirectBlock title="50+ выступлений" description="в качестве ведущего спикера"
@@ -43,9 +43,9 @@ export function GeneralDirector() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className={cn(sectionPaddings, "rounded-[32px]")}>
-            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 gap-4">
-                <div className="xl:col-span-1 lg:col-span-2 pr-4 flex flex-col">
+            className={cn(sectionPaddings, "md:rounded-[32px] sm:rounded-[16px]")}>
+            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 sm:grid-cols-2  gap-x-4">
+                <div className="xl:col-span-1 lg:col-span-2 sm:col-span-2 pr-4 flex flex-col">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"
@@ -58,14 +58,14 @@ export function GeneralDirector() {
                         color="$color-content-secondary"
                         className="mb-8"
                     >
-                        Генеральный директор ООО "ТАНОС ТЕХ"
+                        Генеральный директор <br className="md:hidden"/> ООО "ТАНОС ТЕХ"
                     </tet.p>
                     <div className="max-xl:hidden h-full">
                         <MoreInfo/>
                     </div>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6 flex flex-col">
-                    <img className="rounded-[8px] w-full object-cover max-xl:h-[632px] max-xl:mb-8"
+                <div className="xl:col-span-1 lg:col-span-6 sm:col-span-2 flex flex-col">
+                    <img className="rounded-[8px] w-full object-cover max-xl:h-[632px] max-md:size-[328px] max-xl:mb-8"
                          src="/images/director.png" alt=""/>
                     <div className="xl:hidden h-full">
                         <MoreInfo/>

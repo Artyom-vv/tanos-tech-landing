@@ -1,4 +1,5 @@
-<svg style="display: flex; align-items: center;" width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg style="display: flex; align-items: center;" viewBox="0 0 36 34" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
     <path d="M18.5396 33.074L15.0282 29.5968L25.5453 19.0797H-0.00585938V14.0002H25.5453L15.0282 3.50018L18.5396 0.00585938L35.0737 16.54L18.5396 33.074Z"
           fill="#3062D4"/>
 </svg>
