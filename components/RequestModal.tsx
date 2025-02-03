@@ -5,10 +5,14 @@ import {Button, Divider, IconButton, tet, TextInput} from '@virtuslab/tetrisly-r
 import {CustomTagProps, TagSelector} from '@/components/CustomTag';
 import PhoneInput from '@/components/PhoneInput';
 import useHeroLargeTypo from "@/hooks/useHeroLargeTypo";
+import {useTypoBodyLarge} from "@/hooks/useTypoBodyLarge";
+import {useHeaderTypo3xLarge} from "@/hooks/useHeaderTypo3xLarge";
 
 export function RequestModal({isModal}: { isModal: boolean }) {
     const {closeModal} = useContext(ModalContext);
     const heroLargeTypo = useHeroLargeTypo();
+    const headerTypo3xLarge = useHeaderTypo3xLarge();
+
     const [tags] = useState<CustomTagProps[]>([
         {
             label: 'Рекомендации',
@@ -30,6 +34,7 @@ export function RequestModal({isModal}: { isModal: boolean }) {
         },
     ]);
     const [showContent, setShowContent] = useState(false);
+    const typoBodyLarge = useTypoBodyLarge()
 
     // Эффект для анимации появления контента
     useEffect(() => {
@@ -51,22 +56,22 @@ export function RequestModal({isModal}: { isModal: boolean }) {
             className={`mt-4 h-full relative transition-all duration-300 ${showContent ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}
         >
             <div
-                className="container h-full overflow-y-auto py-14 grid xl:grid-cols-12 lg:grid-cols-8 sm:grid-cols-6 gap-x-4">
+                className="container h-full overflow-y-auto py-14 grid xl:grid-cols-12 lg:grid-cols-8 md:grid-cols-6 max-md:grid-cols-2 gap-x-4">
                 <div
-                    className="xl:col-start-4 xl:col-span-6 lg:col-start-2 lg:col-span-6 md:col-start-1 md:col-span-6 mx-auto w-full">
+                    className="xl:col-start-4 xl:col-span-6 lg:col-start-2 lg:col-span-6 md:col-start-1 md:col-span-6 max-md:col-span-2 mx-auto w-full">
                     <tet.h2 text={heroLargeTypo}>Оставьте заявку</tet.h2>
                     <tet.p
-                        text="$typo-body-large"
+                        text={typoBodyLarge}
                         color="$color-content-secondary"
                         className="mt-4"
                     >
                         Заполните форму, мы свяжемся с Вами
                     </tet.p>
-                    <div className="my-6">
+                    <div className="md:my-6 max-md:my-4">
                         <Divider custom={{color: '$color-border-default'}}/>
                     </div>
-                    <div className="mb-12">
-                        <tet.h3 text="$typo-header-3xLarge" className="mb-6">
+                    <div className="md:mb-12 max-md:mb-6">
+                        <tet.h3 text={headerTypo3xLarge} className="md:mb-6 max-md:mb-4">
                             Контакты
                         </tet.h3>
                         <div className="flex flex-col gap-4">
@@ -74,8 +79,8 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                             <PhoneInput/>
                         </div>
                     </div>
-                    <div className="mb-12">
-                        <tet.h3 text="$typo-header-3xLarge" className="mb-6">
+                    <div className="md:mb-12 max-md:mb-6">
+                        <tet.h3 text={headerTypo3xLarge} className="md:mb-6 max-md:mb-4">
                             Задача
                         </tet.h3>
                         <TextInput className="mb-2" placeholder="Опишите задачу"/>
@@ -83,14 +88,14 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                             Прикрепить файл
                         </Button>
                     </div>
-                    <div className="mb-12">
-                        <tet.h3 text="$typo-header-3xLarge" className="mb-6">
+                    <div className="md:mb-12 max-md:mb-6">
+                        <tet.h3 text={headerTypo3xLarge} className="md:mb-6 max-md:mb-4">
                             Откуда вы узнали о нас?
                         </tet.h3>
-                        <TagSelector className="flex gap-3" tags={tags}/>
+                        <TagSelector className="flex gap-3 flex-wrap" tags={tags}/>
                     </div>
 
-                    <div className="my-6">
+                    <div className="md:my-6 max-md:my-4">
                         <Divider custom={{color: '$color-border-default'}}/>
                     </div>
 
@@ -100,11 +105,12 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                         Оставить заявку
                     </Button>
                     <tet.p
-                        text="$typo-body-large"
+                        text={typoBodyLarge}
                         color="$color-content-tertiary"
                         className="mt-4"
                     >
-                        Нажимая на кнопку, вы соглашаетесь на обработку персональных данных и с политикой
+                        Нажимая на кнопку, вы соглашаетесь <br className="md:hidden"/> на обработку персональных
+                        данных<br className="md:hidden"/> и с политикой
                         конфиденциальности
                     </tet.p>
                 </div>
@@ -115,7 +121,7 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                     appearance="primary"
                     size="large"
                     backgroundColor="$color-background-neutral-subtle"
-                    className="absolute right-6 top-6 !rounded-full !size-[64px]"
+                    className="absolute right-6 top-6 !rounded-full !size-[44px] max-lg:!size-[44px] max-md:!size-[36px]"
                     onClick={() => {
                         setShowContent(false);
                         setTimeout(closeModal, 250)

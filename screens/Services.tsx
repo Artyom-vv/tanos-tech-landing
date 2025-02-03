@@ -24,7 +24,7 @@ export function Services() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className="md:rounded-[32px] sm:rounded-[16px]"
+            className="md:rounded-[32px] max-md:rounded-[16px]"
         >
             <div className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4', sectionPaddings)}>
                 <div className="xl:col-span-1 lg:col-span-2 md:col-span-6">
@@ -43,7 +43,7 @@ export function Services() {
                     </tet.p>
                 </div>
                 <div
-                    className="xl:col-span-1 lg:col-span-6 md:col-span-6 md:grid sm:flex sm:flex-col grid-cols-2 grid-rows-3 max-xl:auto-rows-min gap-4 max-lg:mt-8">
+                    className="xl:col-span-1 lg:col-span-6 md:col-span-6 md:grid max-md:flex max-md:flex-col grid-cols-2 grid-rows-3 max-xl:auto-rows-min gap-4 max-lg:mt-8">
                     <ServiceCard src="/images/web-services.png" title="Веб-сервисы" className="col-span-1">
                         Создаем масштабируемые решения, которые обеспечивают рост вашего бизнеса и адаптацию к
                         изменениям рынка

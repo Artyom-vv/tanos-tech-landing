@@ -5,7 +5,7 @@ const breakpoints = {
     xl: `(min-width: ${tailwindConfig.theme.extend.screens.xl})`,
     lg: `(min-width: ${tailwindConfig.theme.extend.screens.lg})`,
     md: `(min-width: ${tailwindConfig.theme.extend.screens.md})`,
-    sm: `(min-width: ${tailwindConfig.theme.extend.screens.sm})`,
+    sm: `(min-width: 0)`,
 };
 
 type Breakpoint = keyof typeof breakpoints | "xs";

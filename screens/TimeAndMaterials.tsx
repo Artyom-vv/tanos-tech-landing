@@ -51,7 +51,7 @@ export function TimeAndMaterials() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className={cn(sectionPaddings, "md:rounded-[32px] sm:rounded-[16px] overflow-hidden relative")}>
+            className={cn(sectionPaddings, "md:rounded-[32px] max-md:rounded-[16px] overflow-hidden relative")}>
             {hydrated && (
                 <DashedBoxesOverlay/>
             )}

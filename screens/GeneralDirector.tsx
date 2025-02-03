@@ -43,9 +43,9 @@ export function GeneralDirector() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className={cn(sectionPaddings, "md:rounded-[32px] sm:rounded-[16px]")}>
-            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 sm:grid-cols-2  gap-x-4">
-                <div className="xl:col-span-1 lg:col-span-2 sm:col-span-2 pr-4 flex flex-col">
+            className={cn(sectionPaddings, "md:rounded-[32px] max-md:rounded-[16px]")}>
+            <div className="container grid xl:grid-cols-2 lg:grid-cols-8 max-md:grid-cols-2  gap-x-4">
+                <div className="xl:col-span-1 lg:col-span-2 max-md:col-span-2 pr-4 flex flex-col">
                     <tet.h2
                         text="$typo-header-3xLarge"
                         color="$color-content-primary"
@@ -64,7 +64,7 @@ export function GeneralDirector() {
                         <MoreInfo/>
                     </div>
                 </div>
-                <div className="xl:col-span-1 lg:col-span-6 sm:col-span-2 flex flex-col">
+                <div className="xl:col-span-1 lg:col-span-6 max-md:col-span-2 flex flex-col">
                     <img className="rounded-[8px] w-full object-cover max-xl:h-[632px] max-md:size-[328px] max-xl:mb-8"
                          src="/images/director.png" alt=""/>
                     <div className="xl:hidden h-full">

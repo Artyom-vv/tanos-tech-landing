@@ -91,7 +91,7 @@ export function Footer() {
         <footer className={cn(sectionPaddings, "max-xl:!pb-0")}>
             <tet.div
                 backgroundColor="$color-background-inverted"
-                className="overflow-hidden relative max-xl:!rounded-b-none xl:py-16 md:rounded-[32px] sm:rounded-[16px]">
+                className="overflow-hidden relative max-xl:!rounded-b-none xl:py-16 md:rounded-[32px] max-md:rounded-[16px]">
                 <div className="container relative z-10 max-xl:py-12 max-md:py-8">
                     <FooterContent/>
                 </div>

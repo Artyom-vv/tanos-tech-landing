@@ -12,12 +12,12 @@ export function Banner() {
         <section className={cn(sectionPaddings)}>
             <tet.div
                 backgroundColor="$color-action-primary-normal"
-                className={cn("md:rounded-[32px] sm:rounded-[16px] overflow-hidden flex items-center")}
+                className={cn("md:rounded-[32px] max-md:rounded-[16px] overflow-hidden flex items-center")}
             >
-                <div className="container xl:py-14 lg:py-[72px] md:py-12 sm:py-8 relative">
+                <div className="container xl:py-14 lg:py-[72px] md:py-12 max-md:py-8 relative">
                     <div
-                        className="h-full grid lg:grid-cols-2 md:grid-cols-6 sm:grid-cols-2 gap-x-4 items-center relative z-10">
-                        <div className="lg:col-span-1 md:col-span-6 sm:col-span-2">
+                        className="h-full grid lg:grid-cols-2 md:grid-cols-6 max-md:grid-cols-2 gap-x-4 items-center relative z-10">
+                        <div className="lg:col-span-1 md:col-span-6 max-md:col-span-2">
                             <tet.h3
                                 text={breakpoint === "sm" ? "$typo-header-3xLarge" : "$typo-header-4xLarge"}
                                 color="$color-content-primary-inverted"
@@ -36,7 +36,7 @@ export function Banner() {
                             </tet.p>
                         </div>
                         <div
-                            className="lg:col-span-1 max-lg:row-start-2 max-lg:col-span-6 sm:col-span-2 max-lg:mt-[72px] max-md:mt-8 flex justify-end">
+                            className="lg:col-span-1 max-lg:row-start-2 max-lg:col-span-6 max-md:col-span-2 max-lg:mt-[72px] max-md:mt-8 flex justify-end">
                             <Button variant="ghost"
                                     custom={{
                                         ghost: {

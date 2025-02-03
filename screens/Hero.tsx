@@ -34,81 +34,89 @@ export function Hero() {
     return (
         <tet.section
             background={getLinearBackground()}
-            className="flex flex-col overflow-hidden relative">
+            className="flex flex-col overflow-hidden">
             <Header/>
             <div
-                className={cn('container xl:h-[800px] lg:h-[708px] flex-grow relative grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 sm:grid-cols-2 max-xl:auto-rows-min gap-x-4 z-10', sectionPaddings)}>
-                <div className="xl:col-span-1 max-xl:hidden">
-                    <tet.h1 text="$typo-hero-large"
-                            color="$color-content-primary">Tanos tech - полный цикл разработки
-                        it-решений
-                    </tet.h1>
-                    <div className="flex gap-4">
-                        <tet.h1 text="$typo-hero-large" color="$color-content-primary"> от идеи</tet.h1>
-                        <div className="arrow flex items-center flex-grow">
-                            <tet.span backgroundColor="$color-action-primary-normal"
-                                      className="block line h-[5px] flex-grow -mr-[1px]">
-                            </tet.span>
-                            <ReactSVG className="w-[36px] h-[34px] -mb-[1px]" src="/svg/arrow-right.svg"></ReactSVG>
+                className={cn('container xl:h-[800px] lg:h-[708px] flex-grow relative', sectionPaddings)}>
+                <div className="relative z-10 grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 max-md:grid-cols-2 max-xl:auto-rows-min gap-x-4">
+                    <div className="xl:col-span-1 max-xl:hidden">
+                        <tet.h1 text="$typo-hero-large"
+                                color="$color-content-primary">Tanos tech - полный цикл разработки
+                            it-решений
+                        </tet.h1>
+                        <div className="flex gap-4">
+                            <tet.h1 text="$typo-hero-large" color="$color-content-primary"> от идеи</tet.h1>
+                            <div className="arrow flex items-center flex-grow">
+                                <tet.span backgroundColor="$color-action-primary-normal"
+                                          className="block line h-[5px] flex-grow -mr-[1px]">
+                                </tet.span>
+                                <ReactSVG className="w-[36px] h-[34px] -mb-[1px]" src="/svg/arrow-right.svg"></ReactSVG>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="xl:hidden lg:col-span-8 md:col-span-6 sm:col-span-2">
-                    {hydrated && (
-                        <tet.h1 text={breakpoint === "sm" ? "$typo-header-4xLarge" : "$typo-hero-large"}
-                                color="$color-content-primary" className="max-xl:mb-8 max-md:mb-6">
-                            Tanos tech - полный цикл разработки <br className="md:hidden"/> it-решений от идеи <ReactSVG className="inline-block max-md:size-[24px] -mb-1" src="/svg/arrow-right.svg"></ReactSVG> до реализации
+                    <div className="xl:hidden lg:col-span-8 md:col-span-6 max-md:col-span-2">
+                        {hydrated && (
+                            <tet.h1 text={breakpoint === "sm" ? "$typo-header-4xLarge" : "$typo-hero-large"}
+                                    color="$color-content-primary" className="max-xl:mb-8 max-md:mb-6">
+                                Tanos tech - полный цикл разработки <br className="md:hidden"/> it-решений от
+                                идеи <ReactSVG
+                                className="inline-block max-md:size-[24px] -mb-1"
+                                src="/svg/arrow-right.svg"></ReactSVG> до
+                                реализации
+                            </tet.h1>
+                        )}
+                    </div>
+                    <div
+                        className="xl:col-span-1 xl:col-start-2 xl:row-start-1 max-xl:row-start-2 lg:col-span-8 md:col-span-6 max-md:col-span-2 flex flex-col">
+                        <tet.h1 text="$typo-hero-large" color="$color-content-primary" className="mb-8 max-xl:hidden">
+                            <br/>
+                            <br/>
+                            до реализации
                         </tet.h1>
-                    )}
-                </div>
-                <div
-                    className="xl:col-span-1 xl:col-start-2 xl:row-start-1 max-xl:row-start-2 lg:col-span-8 md:col-span-6 sm:col-span-2 flex flex-col">
-                    <tet.h1 text="$typo-hero-large" color="$color-content-primary" className="mb-8 max-xl:hidden">
-                        <br/>
-                        <br/>
-                        до реализации
-                    </tet.h1>
-                    <tet.p text="$typo-body-large" color="$color-content-secondary" className="mb-8 max-md:mb-6 max-md:text">
+                        <tet.p text="$typo-body-large" color="$color-content-secondary"
+                               className="mb-8 max-md:mb-6 max-md:text">
                         <span className="max-md:hidden">Наша цель -
                         создавать прибыльные продукты <br/> на основе современных технологий, <br/>мы специализируемся
                         на следующих
                         аспектах:</span>
-                        <span className="md:hidden">Мы специализируемся на следующих аспектах it-решений:</span>
-                    </tet.p>
-                    <div className="flex max-md:flex-col gap-4 max-md:gap-2 max-md:items-start xl:mb-[100px] lg:mb-[72px]">
-                        <HeroPanel icon="20-check-badge">Грантовое финансирование</HeroPanel>
-                        <HeroPanel icon="20-bolt">Искусственный интеллект</HeroPanel>
+                            <span className="md:hidden">Мы специализируемся на следующих аспектах it-решений:</span>
+                        </tet.p>
+                        <div
+                            className="flex max-md:flex-col gap-4 max-md:gap-2 max-md:items-start xl:mb-[100px] lg:mb-[72px]">
+                            <HeroPanel icon="20-check-badge">Грантовое финансирование</HeroPanel>
+                            <HeroPanel icon="20-bolt">Искусственный интеллект</HeroPanel>
+                        </div>
+                        <Button variant="ghost"
+                                onClick={openModal}
+                                custom={{
+                                    ghost: {
+                                        appearance: {
+                                            inverted: {
+                                                boxShadow: '',
+                                                bg: {
+                                                    _: '$color-action-primary-normal',
+                                                    hover: '$color-action-primary-hover',
+                                                    active: '$color-action-primary-active',
+                                                },
+                                                ...buttonSize,
+                                                borderRadius: '$border-radius-full',
+                                                transform: 'rotate(-5deg)'
+                                            }
+                                        },
+                                    }
+                                }}
+                                className="max-lg:ml-auto max-lg:mt-[72px] max-md:mt-[60px]"
+                                appearance='inverted' size="large">Заказать проект</Button>
                     </div>
-                    <Button variant="ghost"
-                            onClick={openModal}
-                            custom={{
-                                ghost: {
-                                    appearance: {
-                                        inverted: {
-                                            boxShadow: '',
-                                            bg: {
-                                                _: '$color-action-primary-normal',
-                                                hover: '$color-action-primary-hover',
-                                                active: '$color-action-primary-active',
-                                            },
-                                            ...buttonSize,
-                                            borderRadius: '$border-radius-full',
-                                            transform: 'rotate(-5deg)'
-                                        }
-                                    },
-                                }
-                            }}
-                            className="max-lg:ml-auto max-lg:mt-[72px] max-md:mt-[60px]"
-                            appearance='inverted' size="large">Заказать проект</Button>
                 </div>
+                <img width="3680"
+                     height="3680"
+                     src="/images/hero-shape.webp"
+                     alt="tanos tech"
+                     className="absolute lg:size-[864px] md:size-[616px] max-md:size-[344px] xl:-bottom-[376px] xl:-left-[320px] lg:-right-[360px] lg:left-auto lg:-bottom-[360px] md:-left-[260px] md:-bottom-[260px]
+                 max-md:-left-[156px] max-md:-bottom-[156px]
+                  xl:rotate-[80deg] max-lg:rotate-[80deg] z-[1]"/>
             </div>
-            <img width="3680"
-                 height="3680"
-                 src="/images/hero-shape.webp"
-                 alt="tanos tech"
-                 className="absolute lg:size-[864px] md:size-[616px] sm:size-[344px] xl:-bottom-[376px] xl:-left-[320px] lg:-right-[360px] lg:left-auto lg:-bottom-[360px] md:-left-[260px] md:-bottom-[260px]
-                 sm:-left-[156px] sm:-bottom-[156px]
-                  max-lg:rotate-[80deg] z-[1]"/>
         </tet.section>
     )
 }
