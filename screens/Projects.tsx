@@ -12,29 +12,28 @@ const Cards = () => (
         <ProfileCaseCard
             firstTitle="3 месяца"
             firstDescription="На разработку MVP-версии проекта"
-            secondTitle="в 5 раз"
+            secondTitle="в 4 раза"
             secondDescription="Ускорены ключевые бизнес-процессы"
             tags={["Автоматизация", "Алгоритм", "ERP"]}
             className="mr-[36px]"
             src="/images/cases/feedback-lab.png"
             title="Feedback Lab"
-        >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
-            контрагентов</ProfileCaseCard>
+        >Разработка сервиса для сбора и аналитики обратной связи с учеников онлайн школ через мессенджеры с помощью ИИ ассистента</ProfileCaseCard>
         <ProfileCaseCard
             firstTitle="3 месяца"
             firstDescription="На разработку MVP-версии проекта"
-            secondTitle="в 12 раз"
+            secondTitle="в 3 раза"
             secondDescription="Ускорены ключевые бизнес-процессы"
             tags={["Автоматизация", "Алгоритм", "ERP"]}
             className="mr-[36px]"
             src="/images/cases/roof-pro.png"
             title="Roof PRO"
-        >Продукт для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других
-            контрагентов</ProfileCaseCard>
+        >Cервис для расчетов сметы кровли и управления проектами для дилеров кровли, заводов и других контрагентов
+        </ProfileCaseCard>
         <ProfileCaseCard
-            firstTitle="3 месяца"
+            firstTitle="2 месяца"
             firstDescription="На разработку MVP-версии проекта"
-            secondTitle="в 4 раз"
+            secondTitle="в 3 раза"
             secondDescription="Ускорены ключевые бизнес-процессы"
             tags={["Автоматизация", "Алгоритм", "ERP"]}
             className="mr-[36px]"

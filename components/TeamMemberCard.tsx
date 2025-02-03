@@ -1,14 +1,16 @@
 import {HTMLAttributes, ReactNode, useState} from "react";
 import {tet} from "@virtuslab/tetrisly-react";
 import cn from "classnames";
+import {CustomTag} from "@/components/CustomTag";
 
 interface TeamMemberCardProps {
     src: string
     title: string
+    tags: string[]
     children: ReactNode
 }
 
-export function TeamMemberCard({src, title, children, ...props}: TeamMemberCardProps & HTMLAttributes<HTMLDivElement>) {
+export function TeamMemberCard({src, title, children, tags = [], ...props}: TeamMemberCardProps & HTMLAttributes<HTMLDivElement>) {
     const [flipped, setFlipped] = useState(false);
 
     return (
@@ -46,6 +48,13 @@ export function TeamMemberCard({src, title, children, ...props}: TeamMemberCardP
                 >
                     {children}
                 </tet.p>
+                <tet.div
+                    opacity={flipped ? 1 : 0}
+                    className="mt-auto flex gap-3 flex-wrap">
+                    {tags.map((tag, i) => (
+                        <CustomTag key={i} label={tag}/>
+                    ))}
+                </tet.div>
             </tet.div>
         </tet.div>
     )

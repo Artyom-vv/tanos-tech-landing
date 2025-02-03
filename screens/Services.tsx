@@ -49,20 +49,20 @@ export function Services() {
                         изменениям рынка
                     </ServiceCard>
                     <ServiceCard src="/images/erp-crm.png" title="ERP и CRM-системы" className="col-span-1">
-                        Lorem ipsum odor amet, consectetuer adipiscing elit.
+                        Оптимизируем управление внутренними процессами,  повышая производительность  и облегчая масштабирование
                     </ServiceCard>
                     <div className="row-start-2 col-span-2 flex max-md:flex-col gap-4 xl:-translate-x-[336px]">
                         <ServiceCard src="/images/web-apps.png" title="Сайты и приложения" className="col-start-2">
-                            Lorem ipsum odor amet, consectetuer adipiscing elit.
+                            Предлагаем интерактивные решения для привлечения и удержания клиентов
                         </ServiceCard>
                         <ServiceCard src="/images/it-consulting.png" title="ИТ-консалтинг и поддержка"
                                      className="col-span-1">
-                            Lorem ipsum odor amet, consectetuer adipiscing elit.
+                            Предоставляем экспертную поддержку и стратегическое руководство
                         </ServiceCard>
                     </div>
                     <ServiceCard src="/images/it-algorithmics.png" title="ИИ-алгоритмы"
                                  className="row-start-3 col-span-1">
-                        Lorem ipsum odor amet, consectetuer adipiscing elit.
+                        Внедряем собственные и готовые ИИ-модели для аналитики, виртуальных ассистентов, чат-ботов и других сервисов
                     </ServiceCard>
                     <Button
                         className="row-start-3 col-span-1 max-md:mt-4"
