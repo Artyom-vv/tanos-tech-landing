@@ -7,9 +7,11 @@ import PhoneInput from '@/components/PhoneInput';
 import useHeroLargeTypo from "@/hooks/useHeroLargeTypo";
 import {useTypoBodyLarge} from "@/hooks/useTypoBodyLarge";
 import {useHeaderTypo3xLarge} from "@/hooks/useHeaderTypo3xLarge";
+import {useBreakpoint} from "@/hooks/useBreakpoint";
 
 export function RequestModal({isModal}: { isModal: boolean }) {
     const {closeModal} = useContext(ModalContext);
+    const breakpoint = useBreakpoint();
     const heroLargeTypo = useHeroLargeTypo();
     const headerTypo3xLarge = useHeaderTypo3xLarge();
 
@@ -19,7 +21,7 @@ export function RequestModal({isModal}: { isModal: boolean }) {
     const [task, setTask] = useState('');
     const [selectedTag, setSelectedTag] = useState<string | null>('recommendation');
     const [file, setFile] = useState<File | null>(null);
-    const [isDialogVisible, setDialogVisible] = useState(false);
+    const [isDialogVisible, setDialogVisible] = useState(true);
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -185,6 +187,9 @@ export function RequestModal({isModal}: { isModal: boolean }) {
                                         onClick: () => setDialogVisible(false),
                                     }
                                 ]}
+                                custom={{
+                                    minWidth: breakpoint === "sm" ? "300px" : "440px"
+                                }}
                                 content="Ваша заявка успешно отправлена!"
                                 intent="none"
                                 onCloseClick={() => setDialogVisible(false)}
