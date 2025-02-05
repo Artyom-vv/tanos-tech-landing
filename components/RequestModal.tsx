@@ -21,7 +21,7 @@ export function RequestModal({isModal}: { isModal: boolean }) {
     const [task, setTask] = useState('');
     const [selectedTag, setSelectedTag] = useState<string | null>('recommendation');
     const [file, setFile] = useState<File | null>(null);
-    const [isDialogVisible, setDialogVisible] = useState(true);
+    const [isDialogVisible, setDialogVisible] = useState(false);
 
     const [isLoading, setIsLoading] = useState(false);
 
