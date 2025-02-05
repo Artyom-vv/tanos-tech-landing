@@ -24,9 +24,9 @@ export function Services() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className="xl:container md:rounded-[32px] max-md:rounded-[16px]"
+            className="md:rounded-[32px] max-md:rounded-[16px]"
         >
-            <div className={cn('max-xl:container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4', sectionPaddings)}>
+            <div className={cn('container grid xl:grid-cols-2 lg:grid-cols-8 md:grid-cols-6 gap-x-4', sectionPaddings)}>
                 <div className="xl:col-span-1 lg:col-span-2 md:col-span-6">
                     <tet.h2
                         text="$typo-header-3xLarge"

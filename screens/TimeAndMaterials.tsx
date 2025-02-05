@@ -51,7 +51,7 @@ export function TimeAndMaterials() {
     return (
         <tet.section
             backgroundColor="$color-background-neutral-subtle"
-            className={cn(sectionPaddings, "xl:container md:rounded-[32px] max-md:rounded-[16px] overflow-hidden relative")}>
+            className={cn(sectionPaddings, "md:rounded-[32px] max-md:rounded-[16px] overflow-hidden relative")}>
             {hydrated && (
                 <DashedBoxesOverlay/>
             )}
@@ -63,7 +63,7 @@ export function TimeAndMaterials() {
                 <DashedBorderBox/>
                 <DashedBorderBox/>
             </div>
-            <div className="max-xl:container relative z-10 xl:h-[688px] lg:h-[736px]">
+            <div className="container relative z-10 xl:h-[688px] lg:h-[736px]">
                 <div className="h-full content relative flex xl:flex-row max-xl:flex-col xl:gap-6 max-xl:gap-8 xl:items-end">
                     <div className="xl:absolute left-0 top-0">
                         <tet.h2
