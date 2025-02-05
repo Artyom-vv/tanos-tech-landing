@@ -7,7 +7,9 @@ export default function App({Component, pageProps}: AppProps) {
 
     const [isClient, setIsClient] = useState<boolean>(false);
 
-    useEffect(() => setIsClient(true), [])
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
 
     return (
         isClient ? (

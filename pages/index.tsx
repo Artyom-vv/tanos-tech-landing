@@ -7,7 +7,7 @@ import {TimeAndMaterials} from "@/screens/TimeAndMaterials";
 import {Team} from "@/screens/Team";
 import {GeneralDirector} from "@/screens/GeneralDirector";
 import {Footer} from "@/screens/Footer";
-import React, {useContext, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {RequestModal} from "@/components/RequestModal";
 import Modal from "react-modal";
 

@@ -37,11 +37,19 @@ export function Team() {
                     </div>
 
                     <div className="md:grid max-md:flex max-md:flex-col grid-cols-2 grid-rows-2 gap-4">
-                        <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/1.png" title="Алексеев Александр" className="col-span-1">Более 5 лет в IT-разработке,  победитель крупнейших хакатонов СНГ</TeamMemberCard>
-                        <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/2.png" title="Артем Коргинов" className="col-span-1">Опыт работы в крупных IT-компаниях, победитель крупнейших хакатонов СНГ</TeamMemberCard>
+                        <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/1.png" title="Алексеев Александр" className="col-span-1">
+                            Более 5 лет в IT-разработке,  победитель крупнейших хакатонов СНГ
+                        </TeamMemberCard>
+                        <TeamMemberCard tags={["Менеджмент"]} src="/images/team/2.png" title="Артем Коргинов" className="col-span-1">
+                            Опыт работы в крупных IT-компаниях, победитель крупнейших хакатонов СНГ
+                        </TeamMemberCard>
                         <div className="row-start-2 col-span-2 flex max-md:flex-col gap-4 xl:-translate-x-[336px]">
-                            <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/3.png" title="Артем Королев" className="col-span-1">Более 3 лет в IT-разработке, победитель крупнейших хакатонов СНГ</TeamMemberCard>
-                            <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/4.png" title="Дмитрий Морозов" className="col-span-1">Более 5 лет в IT-разработке,  победитель крупнейших хакатонов СНГ</TeamMemberCard>
+                            <TeamMemberCard tags={["Продуктовый дизайн"]} src="/images/team/3.png" title="Артем Королев" className="col-span-1">
+                                Более 3 лет в IT-разработке, победитель крупнейших хакатонов СНГ
+                            </TeamMemberCard>
+                            <TeamMemberCard tags={["Backend", "ML"]} src="/images/team/4.png" title="Дмитрий Морозов" className="col-span-1">
+                                Более 5 лет в IT-разработке,  победитель крупнейших хакатонов СНГ
+                            </TeamMemberCard>
                         </div>
 
                     </div>

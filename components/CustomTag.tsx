@@ -8,19 +8,15 @@ export interface CustomTagProps extends TagProps {
 
 interface TagSelectorProps {
     tags: CustomTagProps[];
-    onChange?: (value: string | null) => void;
+    value: string | null;
+    onTagChange?: (value: string | null) => void;
 }
 
-export const TagSelector = ({tags, onChange, ...props}: TagSelectorProps & HTMLAttributes<HTMLDivElement>) => {
-    const [activeTag, setActiveTag] = useState<string | null>(null);
-
-    // Функция обработки клика по тегу
-    const handleTagClick = (value: string) => {
-        const newActiveTag = value === activeTag ? null : value;
-        setActiveTag(newActiveTag);
-
-        if (onChange) {
-            onChange(newActiveTag);
+export const TagSelector = ({tags, onTagChange, value, ...props}: TagSelectorProps & HTMLAttributes<HTMLDivElement>) => {
+    const handleTagClick = (tagValue: string) => {
+        const newActiveTag = tagValue === value ? null : tagValue;
+        if (onTagChange) {
+            onTagChange(newActiveTag); // Обновляем активный тег
         }
     };
 
@@ -31,7 +27,7 @@ export const TagSelector = ({tags, onChange, ...props}: TagSelectorProps & HTMLA
                     key={tag.value} // Уникальный ключ для каждого тега
                     onClick={() => handleTagClick(tag.value)}
                     label={tag.label}
-                    state={activeTag === tag.value ? "selected" : undefined}
+                    state={value === tag.value ? "selected" : undefined} // Используем значение из пропса value
                 />
             ))}
         </div>

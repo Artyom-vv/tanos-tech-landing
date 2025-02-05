@@ -12,7 +12,7 @@ export function Banner() {
         <section className={cn(sectionPaddings)}>
             <tet.div
                 backgroundColor="$color-action-primary-normal"
-                className={cn("md:rounded-[32px] max-md:rounded-[16px] overflow-hidden flex items-center")}
+                className={cn("xl:container !px-0 md:rounded-[32px] max-md:rounded-[16px] overflow-hidden flex items-center")}
             >
                 <div className="container xl:py-14 lg:py-[72px] md:py-12 max-md:py-8 relative">
                     <div

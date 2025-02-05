@@ -10,9 +10,9 @@ interface Props {
     src: string
     title: string
     tags: string[]
-    children: ReactNode
-    firstTitle: string
-    firstDescription: string
+    children: ReactNode | ReactNode[]
+    firstTitle?: string
+    firstDescription?: string
     secondTitle: string
     secondDescription: string
 }
@@ -26,7 +26,7 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
     return (
         <tet.div
             {...props}
-            className={cn("lg:size-[656px] md:w-[632px] md:h-[663px] sm:w-[328px] sm:h-[404px]", props.className)}
+            className={cn("lg:size-[656px] md:w-[632px] md:h-[663px] sm:w-[328px] sm:h-[404px] flex-shrink-0", props.className)}
             background={flipped ? "" : `url("${src}")`}
             borderRadius="$border-radius-large"
             onMouseEnter={() => setFlipped(true)}
@@ -69,25 +69,27 @@ export function ProfileCaseCard({src, title, children, tags, firstTitle, firstDe
 
                     <div>
 
-                        <div className="max-md:hidden">
-                            <tet.p
-                                text="$typo-header-4xLarge"
-                                color='$color-content-primary'
-                            >
-                                {firstTitle}
-                            </tet.p>
-                            <tet.p
-                                text="$typo-body-large"
-                                color="$color-content-secondary"
-                                className="mt-2"
-                            >
-                                {firstDescription}
-                            </tet.p>
+                        {firstDescription && firstTitle && (
+                            <div className="max-md:hidden">
+                                <tet.p
+                                    text="$typo-header-4xLarge"
+                                    color='$color-content-primary'
+                                >
+                                    {firstTitle}
+                                </tet.p>
+                                <tet.p
+                                    text="$typo-body-large"
+                                    color="$color-content-secondary"
+                                    className="mt-2"
+                                >
+                                    {firstDescription}
+                                </tet.p>
 
-                            <div className="my-6">
-                                <Divider custom={{color: '$color-border-default'}}/>
+                                <div className="my-6">
+                                    <Divider custom={{color: '$color-border-default'}}/>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         <tet.p
                             text={breakpoint === "sm" ? "$typo-header-xLarge" : "$typo-header-4xLarge"}

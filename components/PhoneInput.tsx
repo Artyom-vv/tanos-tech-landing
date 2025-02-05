@@ -1,12 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import IntlTelInput, { CountryData } from "react-intl-tel-input";
 import "react-intl-tel-input/dist/main.css";
 import { TextInput } from "@virtuslab/tetrisly-react";
 
-export default function PhoneInput() {
+interface PhoneInputProps {
+    value?: string;
+    onChange?: (phone: string) => void;
+}
+
+const PhoneInput = forwardRef(({ value = "", onChange }: PhoneInputProps, ref) => {
     const [isValid, setIsValid] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
-    const [phone, setPhone] = useState("");
+    const [phone, setPhone] = useState(value);
     const [formattedPhone, setFormattedPhone] = useState("");
     const [countryCode, setCountryCode] = useState("+7");
     const [sortedCountries, setSortedCountries] = useState<CountryData[]>([]);
@@ -36,28 +41,27 @@ export default function PhoneInput() {
         setIsValid(intlRef.current?.isValidNumber(fullPhone) || false);
         const formattedPhone = intlRef.current?.state?.value || "";
         setFormattedPhone(formattedPhone);
-    }, [intlRef.current, textInputPhoneRef.current, phone]);
+    }, [phone]);
 
     useEffect(() => {
-        // Сортировка стран по имени
         const countries = intlRef.current?.countries || [];
         const sorted = countries.sort((a, b) => Number(a.dialCode) - Number(b.dialCode));
         setSortedCountries(sorted);
 
-        // каюсь, простите, извините
         if (intlRef.current) {
             setTimeout(() => {
                 handleCountryChange(intlRef.current?.selectedCountryData?.iso2 || "")
             }, 50);
         }
-
     }, [intlRef.current?.countries]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newPhone = e.target.value;
+        setPhone(newPhone);
+        onChange?.(countryCode+newPhone);
+
         if (intlRef.current) {
             intlRef.current.setNumber(newPhone);
-            setPhone(newPhone);
         }
     };
 
@@ -66,7 +70,6 @@ export default function PhoneInput() {
         if (target.closest("[data-testid='text-input-before-component']")) {
             setShowMenu((menu) => !menu);
             event.stopPropagation();
-            console.log(showMenu);
         }
     };
 
@@ -82,13 +85,22 @@ export default function PhoneInput() {
 
         setCountryCode(`+${countryData.dialCode}`);
         setShowMenu(false);
-        intlRef.current?.setNumber(`+${countryData.dialCode}`);
+        setPhone(`+${countryData.dialCode}`);
+        onChange?.(`+${countryData.dialCode}`);
     };
 
     const getCountryFlagEmoji = (iso2: string) => {
         const codePoints = iso2.toUpperCase().split("").map((char) => 127397 + char.charCodeAt(0));
         return String.fromCodePoint(...codePoints);
     };
+
+    useImperativeHandle(ref, () => ({
+        getValue: () => phone,
+        setValue: (newPhone: string) => {
+            setPhone(newPhone);
+            onChange?.(newPhone);
+        }
+    }));
 
     return (
         <div style={{ position: "relative" }}>
@@ -137,4 +149,6 @@ export default function PhoneInput() {
             )}
         </div>
     );
-}
+});
+
+export default PhoneInput;
