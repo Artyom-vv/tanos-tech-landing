@@ -66,8 +66,12 @@ export function FooterInfo() {
                 © ООО «Танос Тех» - аккредитованная ИТ-компаний №65381 от 11.11.2024
             </tet.p>
             <div className="flex gap-6">
-                <Button variant="bare" appearance="inverted" size="large">Telegram</Button>
-                <Button variant="bare" appearance="inverted" size="large">Whatsapp</Button>
+                <a href="https://t.me/vsbouslaev" target="_blank" rel="noopener noreferrer">
+                    <Button variant="bare" appearance="inverted" size="large">Telegram</Button>
+                </a>
+                <a href="https://wa.me/79274454053" target="_blank" rel="noopener noreferrer">
+                    <Button variant="bare" appearance="inverted" size="large">Whatsapp</Button>
+                </a>
             </div>
         </div>
     )
