@@ -56,7 +56,7 @@ export default function Home() {
                         <Projects/>
                     </div>
                     <TimeAndMaterials/>
-                    <Team/>
+                    {/*<Team/>*/}
                     <GeneralDirector/>
                     <div id="contacts">
                         <Footer/>

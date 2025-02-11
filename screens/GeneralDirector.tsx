@@ -42,7 +42,7 @@ function MoreInfo() {
 export function GeneralDirector() {
     return (
         <tet.section
-            backgroundColor="$color-background-neutral-subtle"
+            // backgroundColor="$color-background-neutral-subtle"
             className={cn(sectionPaddings, "md:rounded-[32px] max-md:rounded-[16px]")}>
             <div className="container grid xl:grid-cols-2 lg:grid-cols-8 max-md:grid-cols-2  gap-x-4">
                 <div className="xl:col-span-1 lg:col-span-2 max-md:col-span-2 pr-4 flex flex-col">

@@ -15,6 +15,8 @@ export function RedirectBlock({children, title, description, link}: Props) {
             borderRadius="$border-radius-large"
             padding={padding2xLarge}
             backgroundColor="$color-background-default"
+            borderWidth="1px"
+            borderColor="$color-border-default"
             className="flex-grow basis-0 flex-shrink-0"
         >
             <div className="mb-4">
